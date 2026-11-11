@@ -72,11 +72,12 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .site-header.scrolled{background:rgba(251,247,242,.96);border-bottom-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:82px;transition:height .3s var(--e)}
 .site-header.scrolled .nav{height:68px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;transition:.3s var(--e)}
-.site-header.scrolled .brand img{width:40px;height:40px}
-.brand .wm{font-family:var(--fd);font-size:1.4rem;font-weight:500;color:var(--ink);line-height:1;letter-spacing:.01em}
-.brand .wmsub{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex:0 0 auto;box-shadow:0 2px 8px rgba(110,44,59,.12);transition:.3s var(--e)}
+.site-header.scrolled .brand img{width:42px;height:42px}
+.brand-tx{display:flex;flex-direction:column;justify-content:center;line-height:1;min-width:0}
+.brand .wm{font-family:var(--fd);font-size:1.42rem;font-weight:600;color:var(--ink);line-height:1.08;letter-spacing:.005em}
+.brand .wmsub{font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-top:4px;white-space:nowrap}
 .nav-links{display:none;align-items:center;gap:4px}
 .nav-links a{position:relative;font-weight:500;font-size:.88rem;color:var(--body);padding:9px 14px;transition:.2s}
 .nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--wine);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--e)}
@@ -228,6 +229,15 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .chips{display:flex;flex-wrap:wrap;gap:9px}
 .chip{padding:10px 17px;border:1.5px solid var(--line);border-radius:var(--pill);background:#fff;font-size:.87rem;font-weight:500;transition:.18s;color:var(--body)}
 .chip:hover{border-color:var(--blush-2)}.chip.selected{background:var(--wine);color:#fff;border-color:var(--wine)}
+.levels{display:grid;gap:9px}
+.level{text-align:left;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:.18s;cursor:pointer;display:block}
+.level:hover{border-color:var(--blush-2)}
+.level.selected{border-color:var(--wine);background:var(--blush)}
+.level .lv-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.level .lv-name{font-weight:600;font-size:.9rem;color:var(--ink)}
+.level .lv-fee{font-size:.82rem;font-weight:700;color:var(--wine);white-space:nowrap}
+.level .lv-desc{display:block;font-size:.78rem;color:var(--muted);margin-top:3px;line-height:1.4}
+.cz-break{text-align:center;font-size:.8rem;color:var(--muted)}.cz-break span{display:inline}
 .addon-list{display:grid;gap:9px}
 .addon{display:flex;align-items:center;gap:11px;padding:12px 14px;background:#fff;border:1.5px solid var(--line);border-radius:10px;transition:.15s}
 .addon:has(input:checked){border-color:var(--rose);background:var(--blush)}
@@ -295,6 +305,25 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .tc{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;align-items:flex-start}
 .tc .tcn{flex:0 0 auto;width:27px;height:27px;border-radius:8px;background:var(--blush);color:var(--wine);font-weight:600;font-size:.82rem;display:flex;align-items:center;justify-content:center;font-family:var(--fd)}
 .tc p{font-size:.89rem;color:var(--body)}.tc b{color:var(--ink)}
+/* faq */
+.faq{max-width:760px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.2s}
+.faq-item.open{border-color:var(--blush-2)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;font-weight:600;font-size:.95rem;color:var(--ink);text-align:left}
+.faq-q .fi{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--blush);color:var(--wine);display:flex;align-items:center;justify-content:center;transition:transform .3s var(--e)}
+.faq-q .fi svg{width:15px;height:15px}
+.faq-item.open .faq-q .fi{transform:rotate(135deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--e)}
+.faq-a p{padding:0 20px 18px;color:var(--body);font-size:.91rem}
+.faq-item.open .faq-a{max-height:320px}
+/* cara pesan */
+.howto{display:grid;gap:14px;grid-template-columns:1fr;margin-top:18px}
+@media(min-width:720px){.howto{grid-template-columns:repeat(3,1fr)}}
+.hw{display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.hw .hn{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--blush);color:var(--wine);display:flex;align-items:center;justify-content:center}
+.hw .hn svg{width:18px;height:18px}
+.hw b{display:block;color:var(--ink);font-size:.92rem;margin-bottom:2px;font-weight:600}
+.hw p{font-size:.82rem;color:var(--muted);line-height:1.5}
 /* account */
 .acard{max-width:500px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow-sm)}
 .oitem{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
@@ -401,6 +430,14 @@ const ADDONS=[
  {id:"fruit",name:"Fresh Fruit",price:10000,note:"mulai Rp10k"},
  {id:"crown",name:"Crown",price:50000,note:"mulai Rp50k"}
 ];
+/* Design fee otomatis berdasarkan tingkat kerumitan desain (estimasi; final dikonfirmasi admin) */
+const DESIGN_LEVELS=[
+ {id:"simple",name:"Polos / Tulisan Saja",fee:0,desc:"Base color + tulisan, tanpa gambar"},
+ {id:"minimal",name:"Minimalis",fee:10000,desc:"Tulisan + hiasan simpel (bunga, pita, bintang)"},
+ {id:"character",name:"Karakter / Gambar 2D",fee:25000,desc:"Gambar karakter atau ilustrasi 2D"},
+ {id:"premium",name:"Full Custom / 3D / Detail",fee:50000,desc:"Karakter 3D, foto, atau desain sangat detail"}
+];
+function designFeeOf(id){const l=DESIGN_LEVELS.find(x=>x.id===id);return l?l.fee:0}
 const HERO_IMG="16cm-customcakedesignsimple.jpeg";
 const REVIEWS=[
  {stars:5,cat:"Custom Cake",title:"Cakep, sesuai request",body:"Korean cake-nya rapi dan persis seperti desain yang aku minta. Rasanya lembut, tidak terlalu manis, packaging aman sampai rumah.",name:"Dinda A.",handle:"@dindaa"},
@@ -409,6 +446,14 @@ const REVIEWS=[
  {stars:5,cat:"Custom Cake",title:"Penyelamat surprise dadakan",body:"Order mendadak untuk surprise, prosesnya cepat dan hasilnya rapi. Terima kasih Cakevelys, acaranya jadi berkesan.",name:"Nael R.",handle:"@naelrzky"},
  {stars:5,cat:"Custom Cake",title:"Estetik dan rapi",body:"Vintage heart cake-nya aesthetic, tulisannya rapi, warnanya soft sesuai permintaan. Cocok untuk momen spesial.",name:"Alya M.",handle:"@alyamrs"},
  {stars:4,cat:"Custom Cookie",title:"Enak, mau coba rasa lain",body:"Choco paradise-nya juara, cokelatnya terasa. Lain kali mau coba varian lain. Pelayanan dan rasa memuaskan.",name:"Fikri H.",handle:"@fikrih"}
+];
+const FAQ=[
+ {q:"Minimal berapa hari sebelum acara harus pesan?",a:"Pemesanan maksimal H-1. Untuk desain rumit atau tanggal ramai, semakin awal semakin baik agar slot tersedia."},
+ {q:"Apa itu design fee dan berapa biayanya?",a:"Design fee adalah biaya sesuai tingkat kerumitan desain. Di website sudah ada estimasi otomatis: polos gratis, minimalis +Rp10.000, karakter 2D +Rp25.000, dan full custom/3D +Rp50.000. Nominal final dikonfirmasi admin sesuai detail desainmu."},
+ {q:"Bagaimana cara pembayarannya?",a:"Pembayaran via QRIS. Setelah checkout, scan QRIS yang muncul, lalu konfirmasi dengan mengirim bukti bayar dan referensi desain ke WhatsApp kami."},
+ {q:"Apakah bisa diantar ke alamat saya?",a:"Bisa, via ojek online (Shopee/Gosend/Grab). Untuk cake 16 cm ke atas dan mentai 14 cm disarankan mobil atau self pick-up agar aman."},
+ {q:"Berapa lama kue bisa bertahan?",a:"Cake tahan ±5 hari di kulkas, cookies hingga 2 minggu, dan mentai 1 hari suhu ruang atau 2 hari di kulkas."},
+ {q:"Apakah hasilnya persis seperti foto referensi?",a:"Karena handmade, hasil dibuat semirip mungkin namun tidak bisa 100% identik dengan referensi. Kami selalu usahakan yang terbaik."}
 ];
 
 /* ===== storage ===== */
@@ -442,6 +487,8 @@ const I={
  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
  chevL:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>',
  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>',
+ plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>',
+ qr:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="14" x2="14" y2="17"/><line x1="17" y1="14" x2="21" y2="14"/><line x1="21" y1="17" x2="21" y2="21"/><line x1="14" y1="21" x2="17" y2="21"/></svg>',
  heart:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.3 2 4.8 5.3 4.8c2 0 3.3 1.2 4.1 2.4C10.3 6 11.6 4.8 13.6 4.8c3.3 0 4.9 3.5 3.3 6.9C19.5 16.4 12 21 12 21z"/></svg>',
  cake:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16v-7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/><path d="M4 15c1.5 1.3 2.5 1.3 4 0s2.5-1.3 4 0 2.5 1.3 4 0 2.5-1.3 4 0"/><path d="M12 7V4"/><circle cx="12" cy="3" r="1" fill="currentColor"/></svg>',
  cookie:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/><circle cx="9" cy="10" r=".6" fill="currentColor"/><circle cx="14" cy="14" r=".6" fill="currentColor"/><circle cx="9.5" cy="15" r=".6" fill="currentColor"/><circle cx="15" cy="9" r=".6" fill="currentColor"/></svg>',
@@ -472,7 +519,7 @@ function renderHeader(){
  const r=currentRoute();
  document.getElementById("app-header").innerHTML=`
  <header class="site-header" id="siteHeader"><div class="wrap nav">
-   <a href="#home" class="brand"><img src="${CAKEVELYS.logo}" alt="Cakevelys" onerror="this.style.display='none'"><span><span class="wm">Cakevelys</span><span class="wmsub">Custom Cake</span></span></a>
+   <a href="#home" class="brand"><img src="${CAKEVELYS.logo}" alt="Cakevelys" onerror="this.style.display='none'"><span class="brand-tx"><span class="wm">Cakevelys</span><span class="wmsub">Custom Cake</span></span></a>
    <nav class="nav-links">${NAV.map(n=>`<a href="#${n.h}" class="${n.h===r?"active":""}">${n.l}</a>`).join("")}</nav>
    <div class="nav-actions">
      <a href="#shop" class="btn btn-primary nav-cta" style="padding:10px 20px;margin-right:6px">Pesan Sekarang</a>
@@ -576,7 +623,12 @@ function viewShop(){return `
      <button class="filter" data-f="cookie" onclick="filterShop('cookie',this)">Custom Cookie</button>
      <button class="filter" data-f="mentai" onclick="filterShop('mentai',this)">Mentai Cake</button>
    </div>
-   <div class="note" style="margin-top:4px">${I.info}<span>Semua harga <b>mulai dari</b> dan <b>belum termasuk design fee</b>. Produk handmade, hasil tidak bisa 100% sama dengan referensi. Pemesanan maksimal H-1.</span></div>
+   <div class="howto">
+     <div class="hw"><span class="hn">${I.cake}</span><div><b>1. Pilih & Kustom</b><p>Tentukan ukuran, rasa, tingkat desain, lalu masukkan ke keranjang.</p></div></div>
+     <div class="hw"><span class="hn">${I.qr}</span><div><b>2. Bayar via QRIS</b><p>Checkout, scan QRIS, bayar sesuai nominal yang tertera.</p></div></div>
+     <div class="hw"><span class="hn">${I.wa}</span><div><b>3. Konfirmasi WhatsApp</b><p>Kirim form pesanan, bukti bayar & referensi desainmu.</p></div></div>
+   </div>
+   <div class="note" style="margin-top:16px">${I.info}<span>Semua harga <b>mulai dari</b>. Design fee otomatis dihitung dari tingkat kerumitan desain yang kamu pilih. Produk handmade, hasil tidak bisa 100% sama dengan referensi. Pemesanan maksimal H-1.</span></div>
  </div>
  <div class="wrap section" id="shop-root" style="padding-top:12px"></div>`;
 }
@@ -605,8 +657,13 @@ function viewAbout(){return `
        ].map(t=>`<div class="tc reveal"><span class="tcn">${t[0]}</span><p>${t[1]}</p></div>`).join("")}
    </div>
    <div style="text-align:center;margin-top:30px"><a href="#shop" class="btn btn-primary btn-lg">Mulai Pesan ${I.arrow}</a></div>
+ </div></section>
+ <section class="section"><div class="wrap">
+   <div class="sec-head center"><span class="kicker center reveal">FAQ</span><h2 class="reveal d1">Pertanyaan <span class="serif-it">yang sering ditanya</span></h2></div>
+   <div class="faq reveal">${FAQ.map(f=>`<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="fi">${I.plus}</span></button><div class="faq-a"><p>${f.a}</p></div></div>`).join("")}</div>
  </div></section>`;
 }
+function toggleFaq(b){b.closest(".faq-item").classList.toggle("open")}
 function viewReview(){return `<div class="page-head wrap"><span class="kicker">Testimoni</span><h1>Kata <span class="serif-it">pelanggan</span></h1><p>Cerita dan pengalaman dari pelanggan Cakevelys.</p></div><div class="wrap section" id="review-root" style="padding-top:24px"></div>`}
 function viewContact(){return `
  <div class="page-head wrap"><span class="kicker">Hubungi Kami</span><h1>Mari <span class="serif-it">terhubung</span></h1><p>Berlokasi di Banyumanik, Semarang. Silakan chat dulu sebelum memesan.</p></div>
@@ -651,7 +708,7 @@ function filterShop(key,btn){
 let CZ=null;
 function openCustomizer(catKey,itemId){
  const cat=getCategory(catKey),item=getItem(catKey,itemId);if(!cat||!item)return;
- CZ={catKey,itemId,flavour:cat.options?.flavour?cat.options.flavour.choices[0].name:null,flavourAdd:cat.options?.flavour?cat.options.flavour.choices[0].add:0,shape:cat.options?.shape?cat.options.shape.choices[0].name:null,filling:item.fillings?item.fillings[0].name:null,fillingPrice:item.fillings?item.fillings[0].price:null,text:"",addons:{},qty:1};
+ CZ={catKey,itemId,flavour:cat.options?.flavour?cat.options.flavour.choices[0].name:null,flavourAdd:cat.options?.flavour?cat.options.flavour.choices[0].add:0,shape:cat.options?.shape?cat.options.shape.choices[0].name:null,filling:item.fillings?item.fillings[0].name:null,fillingPrice:item.fillings?item.fillings[0].price:null,level:"simple",text:"",addons:{},qty:1};
  buildModal(cat,item);document.getElementById("cz-overlay").classList.add("open");document.body.style.overflow="hidden";
 }
 function closeCustomizer(){document.getElementById("cz-overlay")?.classList.remove("open");document.body.style.overflow="";CZ=null}
@@ -662,17 +719,18 @@ function buildModal(cat,item){
  let sh="";if(cat.options?.shape){const ch=cat.options.shape.choices.map((c,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="onShapePick(this,'${c.name}')">${c.name}</button>`).join("");sh=`<div class="field"><label>${cat.options.shape.label} <span class="req">*</span></label><div class="chips" id="cz-shape">${ch}</div></div>`}
  let fi="";if(item.fillings){const ch=item.fillings.map((f,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="onFillingPick(this,'${f.name}',${f.price})">${f.name} · ${rupiah(f.price)}</button>`).join("");fi=`<div class="field"><label>Topping <span class="req">*</span></label><div class="chips" id="cz-filling">${ch}</div></div>`}
  let tx="";if(cat.hasText){tx=`<div class="field"><label>Request Tulisan / Karakter</label><textarea id="cz-text" placeholder="Contoh: Tulisan 'Happy Birthday Sarah', karakter Hello Kitty, warna pastel pink..." oninput="CZ.text=this.value"></textarea><div class="hint">Foto referensi bisa dikirim saat konfirmasi di WhatsApp.</div></div>`}
+ const dl=`<div class="field"><label>Tingkat Kerumitan Desain <span class="req">*</span></label><div class="levels" id="cz-levels">${DESIGN_LEVELS.map((l,i)=>`<button type="button" class="level ${i===0?"selected":""}" onclick="onLevelPick(this,'${l.id}')"><span class="lv-top"><span class="lv-name">${l.name}</span><span class="lv-fee">${l.fee?"+"+rupiah(l.fee):"Gratis"}</span></span><span class="lv-desc">${l.desc}</span></button>`).join("")}</div><div class="hint">Design fee otomatis sesuai tingkat kerumitan — estimasi, final dikonfirmasi admin.</div></div>`;
  const ad=ADDONS.map(a=>a.qty?`<label class="addon"><input type="checkbox" onchange="onAddonToggle('${a.id}',this.checked)"><span class="an">${a.name} <span class="ap">(${a.note})</span></span><span class="qm"><input type="number" id="addon-qty-${a.id}" min="1" value="1" onchange="onAddonQty('${a.id}',this.value)"><span style="font-size:.78rem;color:var(--muted)">pcs</span></span></label>`:`<label class="addon"><input type="checkbox" onchange="onAddonToggle('${a.id}',this.checked)"><span class="an">${a.name}</span><span class="ap">${a.note}</span></label>`).join("");
  const waC=encodeURIComponent(`Halo Cakevelys, saya ingin konsultasi desain untuk ${cat.title} ukuran ${item.size}. Boleh dibantu?`);
  const media=item.img?`<img src="${item.img}" alt="${cat.title} ${item.size}" onerror="this.src='${CAKEVELYS.logo}';this.style.objectFit='contain';this.style.padding='22px';this.style.background='#fff'">`:`<div class="ph">${catIcon(cat.key)}<span>Contoh desain via WhatsApp</span></div>`;
  ov.innerHTML=`<div class="modal" role="dialog" aria-modal="true">
    <div class="mhead"><h3>${cat.title} · ${item.size}</h3><button class="mclose" onclick="closeCustomizer()">${I.close}</button></div>
-   <div class="mbody"><div class="mmedia">${media}</div>${fl}${sh}${fi}${tx}
+   <div class="mbody"><div class="mmedia">${media}</div>${fl}${sh}${fi}${tx}${dl}
      <div class="field"><label>Add-ons <span style="font-weight:400;color:var(--muted);font-size:.8rem">(opsional)</span></label><div class="addon-list">${ad}</div></div>
      <div class="field"><label>Jumlah</label><div class="qty"><button type="button" onclick="onQty(-1)">−</button><input type="number" id="cz-qty" value="1" min="1" onchange="onQtyInput(this.value)"><button type="button" onclick="onQty(1)">+</button></div></div>
      <div class="note">${I.info}<span>Harga <b>belum termasuk design fee</b>. Design fee & ongkir dikonfirmasi admin via WhatsApp sesuai tingkat kerumitan desain.</span></div>
    </div>
-   <div class="mfoot"><div class="mtotal"><span class="l">Estimasi harga</span><span class="v" id="cz-total">${rupiah(czPrice())}</span></div>
+   <div class="mfoot"><div class="cz-break" id="cz-break">${czBreakHTML()}</div><div class="mtotal"><span class="l">Estimasi total</span><span class="v" id="cz-total">${rupiah(czTotal())}</span></div>
      <div class="row"><a class="btn btn-outline" href="${CAKEVELYS.waLink}?text=${waC}" target="_blank" rel="noopener" style="flex:1">Konsultasi</a><button class="btn btn-primary" style="flex:1.4" onclick="addCurrentToCart()">Tambah ke Keranjang</button></div>
    </div></div>`;
 }
@@ -681,30 +739,39 @@ function onShapePick(b,n){document.querySelectorAll("#cz-shape .chip").forEach(c
 function onFillingPick(b,n,p){document.querySelectorAll("#cz-filling .chip").forEach(c=>c.classList.remove("selected"));b.classList.add("selected");CZ.filling=n;CZ.fillingPrice=p;refreshTotal()}
 function onAddonToggle(id,ch){if(ch){const a=ADDONS.find(x=>x.id===id);CZ.addons[id]={qty:a.qty?Number(document.getElementById("addon-qty-"+id)?.value||1):1}}else delete CZ.addons[id];refreshTotal()}
 function onAddonQty(id,v){if(CZ.addons[id]){CZ.addons[id].qty=Math.max(1,Number(v)||1);refreshTotal()}}
+function onLevelPick(b,id){document.querySelectorAll("#cz-levels .level").forEach(c=>c.classList.remove("selected"));b.classList.add("selected");CZ.level=id;refreshTotal()}
 function onQty(d){CZ.qty=Math.max(1,CZ.qty+d);document.getElementById("cz-qty").value=CZ.qty;refreshTotal()}
 function onQtyInput(v){CZ.qty=Math.max(1,Number(v)||1);document.getElementById("cz-qty").value=CZ.qty;refreshTotal()}
-function refreshTotal(){const e=document.getElementById("cz-total");if(e)e.textContent=rupiah(czPrice())}
+function refreshTotal(){const e=document.getElementById("cz-total");if(e)e.textContent=rupiah(czTotal());const br=document.getElementById("cz-break");if(br)br.innerHTML=czBreakHTML()}
 function czUnitPrice(){const item=getItem(CZ.catKey,CZ.itemId);let base=item.fillings?(CZ.fillingPrice!=null?CZ.fillingPrice:item.fillings[0].price):item.price;let u=base+(CZ.flavourAdd||0);for(const id in CZ.addons){const a=ADDONS.find(x=>x.id===id);u+=a.price*(CZ.addons[id].qty||1)}return u}
-function czPrice(){return czUnitPrice()*(CZ.qty||1)}
+function czProduct(){return czUnitPrice()*(CZ.qty||1)}
+function czDesignFee(){return designFeeOf(CZ.level)}
+function czTotal(){return czProduct()+czDesignFee()}
+function czBreakHTML(){const f=czDesignFee();return `<span>Kue ${rupiah(czProduct())}</span>${f?`<span> + Design fee ${rupiah(f)}</span>`:`<span> · desain gratis</span>`}`}
 function addCurrentToCart(){
  const cat=getCategory(CZ.catKey),item=getItem(CZ.catKey,CZ.itemId);
+ const lv=DESIGN_LEVELS.find(l=>l.id===CZ.level)||DESIGN_LEVELS[0];
  const addonList=Object.keys(CZ.addons).map(id=>{const a=ADDONS.find(x=>x.id===id),q=CZ.addons[id].qty||1;return {name:a.name+(a.qty?` ×${q}`:""),price:a.price*q}});
- const line={uid:"l"+Date.now()+Math.floor(Math.random()*1000),category:cat.title,catKey:CZ.catKey,productName:`${cat.title} ${item.size}`,size:item.size,img:item.img,flavour:CZ.flavour,shape:CZ.shape,filling:CZ.filling,text:(CZ.text||"").trim(),addons:addonList,qty:CZ.qty,unitPrice:czUnitPrice(),lineTotal:czPrice()};
+ const product=czUnitPrice()*CZ.qty;
+ const line={uid:"l"+Date.now()+Math.floor(Math.random()*1000),category:cat.title,catKey:CZ.catKey,productName:`${cat.title} ${item.size}`,size:item.size,img:item.img,flavour:CZ.flavour,shape:CZ.shape,filling:CZ.filling,designLevel:lv.name,designFee:lv.fee,text:(CZ.text||"").trim(),addons:addonList,qty:CZ.qty,unitPrice:czUnitPrice(),productTotal:product,lineTotal:product+lv.fee};
  const c=getCart();c.push(line);saveCart(c);closeCustomizer();toast("Ditambahkan ke keranjang")}
 
 /* ===== CART + CHECKOUT + QRIS + WHATSAPP ===== */
+function lineProduct(it){return it.productTotal!=null?it.productTotal:(it.lineTotal-(it.designFee||0))}
 function renderCart(){
  const cart=getCart(),root=document.getElementById("cart-root");if(!root)return;
  if(cart.length===0){root.innerHTML=`<div class="empty"><div class="ei">${I.bag}</div><h3>Keranjang masih kosong</h3><p>Yuk pilih kue favoritmu terlebih dahulu.</p><a href="#shop" class="btn btn-primary btn-lg">Mulai Belanja ${I.arrow}</a></div>`;return}
  const prof=getProfile();
  const items=cart.map(it=>{
-  const d=[];if(it.flavour)d.push(`<b>Rasa:</b> ${it.flavour}`);if(it.shape)d.push(`<b>Bentuk:</b> ${it.shape}`);if(it.filling)d.push(`<b>Topping:</b> ${it.filling}`);if(it.addons&&it.addons.length)d.push(`<b>Add-on:</b> ${it.addons.map(a=>a.name).join(", ")}`);if(it.text)d.push(`<b>Request:</b> "${escapeHTML(it.text)}"`);
+  const d=[];if(it.flavour)d.push(`<b>Rasa:</b> ${it.flavour}`);if(it.shape)d.push(`<b>Bentuk:</b> ${it.shape}`);if(it.filling)d.push(`<b>Topping:</b> ${it.filling}`);if(it.designLevel)d.push(`<b>Desain:</b> ${it.designLevel}${it.designFee?` (+${rupiah(it.designFee)})`:""}`);if(it.addons&&it.addons.length)d.push(`<b>Add-on:</b> ${it.addons.map(a=>a.name).join(", ")}`);if(it.text)d.push(`<b>Request:</b> "${escapeHTML(it.text)}"`);
   const media=it.img?`<img src="${it.img}" alt="${it.productName}" onerror="this.src='${CAKEVELYS.logo}';this.style.objectFit='contain';this.style.padding='8px';this.style.background='#fff'">`:`<div class="ph">${catIcon(it.catKey)}</div>`;
   return `<div class="citem"><div class="cmedia">${media}</div><div><h4>${it.productName}</h4><div class="meta">${d.join("<br>")}</div>
    <div class="cfoot"><div class="qty"><button type="button" onclick="changeQty('${it.uid}',-1)">−</button><input type="number" value="${it.qty}" min="1" onchange="setQty('${it.uid}',this.value)"><button type="button" onclick="changeQty('${it.uid}',1)">+</button></div>
    <div style="display:flex;align-items:center;gap:14px"><span class="lp">${rupiah(it.lineTotal)}</span><button class="rm" onclick="removeItem('${it.uid}')">${I.trash} Hapus</button></div></div></div></div>`;
  }).join("");
- const subtotal=cart.reduce((s,it)=>s+it.lineTotal,0);
+ const subProduct=cart.reduce((s,it)=>s+lineProduct(it),0);
+ const feeTotal=cart.reduce((s,it)=>s+(it.designFee||0),0);
+ const grand=subProduct+feeTotal;
  root.innerHTML=`<div class="cart-layout"><div><h2 style="margin-bottom:18px;font-size:1.45rem;font-weight:500">Keranjang · ${cartCount()} item</h2>${items}<a href="#shop" class="btn btn-ghost">${I.chevL} Lanjut belanja</a></div>
   <div><div class="summary"><h3>Form Konfirmasi Pesanan</h3><p class="sub">Data ini otomatis tersusun rapi di pesan WhatsApp.</p>
    <div class="field"><label>Atas Nama <span class="req">*</span></label><input type="text" id="buyer-name" placeholder="Nama pemesan" value="${escapeAttr(prof.name)}"></div>
@@ -712,18 +779,15 @@ function renderCart(){
    <div class="field"><label>Tanggal Ambil / Kirim <span class="req">*</span></label><input type="date" id="buyer-date" min="${minPickupDate()}"><div class="hint">Pemesanan maksimal H-1.</div></div>
    <div class="field"><label>Metode Pengambilan</label><select id="buyer-method"><option value="Self Pick-up">Self Pick-up (ambil sendiri)</option><option value="Pengiriman Ojol (Shopee/Gosend/Grab)">Pengiriman Ojol (Shopee/Gosend/Grab)</option></select></div>
    <div class="field"><label>Deskripsi / Link Referensi Desain</label><textarea id="buyer-ref" placeholder="Jelaskan desain yang kamu mau, atau tempel link Pinterest/IG. Foto referensi bisa dikirim langsung di chat WhatsApp."></textarea></div>
-   <div class="field"><label>Design Fee <span style="font-weight:400;color:var(--muted);font-size:.8rem">(opsional, jika sudah deal)</span></label><input type="number" id="buyer-fee" min="0" placeholder="Kosongkan jika belum — admin akan konfirmasi" oninput="recalcTotal()"></div>
    <div class="field"><label>Catatan (opsional)</label><textarea id="buyer-note" placeholder="Jam ambil, request tambahan, dll."></textarea></div>
-   <div class="srow"><span>Subtotal</span><span>${rupiah(subtotal)}</span></div>
-   <div class="srow"><span class="muted">Design fee</span><span class="muted" id="sumfee">dikonfirmasi admin</span></div>
+   <div class="srow"><span>Subtotal kue</span><span>${rupiah(subProduct)}</span></div>
+   <div class="srow"><span>Design fee ${feeTotal?"":'<span class="muted">(desain simpel)</span>'}</span><span>${rupiah(feeTotal)}</span></div>
    <div class="srow"><span class="muted">Ongkir</span><span class="muted">sesuai metode</span></div>
-   <div class="srow total"><span>Total</span><span class="v" id="sumtotal">${rupiah(subtotal)}</span></div>
-   <p class="muted" style="margin-top:8px">Total final (termasuk design fee & ongkir) dikonfirmasi admin via WhatsApp.</p>
+   <div class="srow total"><span>Total</span><span class="v">${rupiah(grand)}</span></div>
+   <p class="muted" style="margin-top:8px">Design fee adalah estimasi otomatis. Total final (termasuk ongkir) dikonfirmasi admin via WhatsApp.</p>
    <button class="btn btn-primary btn-block btn-lg mt-16" onclick="startCheckout()">Checkout · Bayar QRIS ${I.arrow}</button>
   </div></div></div>`;
- window.__sub=subtotal;
 }
-function recalcTotal(){const fee=Number(document.getElementById("buyer-fee")?.value||0);const sub=window.__sub||0;document.getElementById("sumfee").textContent=fee>0?rupiah(fee):"dikonfirmasi admin";document.getElementById("sumtotal").textContent=rupiah(sub+fee)}
 function changeQty(uid,d){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)return;it.qty=Math.max(1,it.qty+d);it.lineTotal=it.unitPrice*it.qty;saveCart(c);renderCart()}
 function setQty(uid,v){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)return;it.qty=Math.max(1,Number(v)||1);it.lineTotal=it.unitPrice*it.qty;saveCart(c);renderCart()}
 function removeItem(uid){saveCart(getCart().filter(x=>x.uid!==uid));renderCart();toast("Item dihapus",false)}
@@ -732,22 +796,22 @@ function startCheckout(){
  const name=val("buyer-name"),phone=val("buyer-phone"),date=val("buyer-date");
  if(!name||!phone||!date){toast("Lengkapi nama, WA & tanggal dulu ya",false);[["buyer-name",name],["buyer-phone",phone],["buyer-date",date]].forEach(([id,v])=>{const el=document.getElementById(id);if(el&&!v){el.style.borderColor="var(--wine)";el.focus()}});return}
  saveProfile({name,phone});
- const cart=getCart(),subtotal=cart.reduce((s,it)=>s+it.lineTotal,0);
- const fee=Number(val("buyer-fee")||0);
+ const cart=getCart();
+ const subtotal=cart.reduce((s,it)=>s+lineProduct(it),0);
+ const fee=cart.reduce((s,it)=>s+(it.designFee||0),0);
  openQris({orderNo:genOrderNo(),name,phone,date,method:val("buyer-method"),ref:val("buyer-ref"),fee,note:val("buyer-note"),items:cart,subtotal,total:subtotal+fee,createdAt:new Date().toISOString()});
 }
 function openQris(order){
  let ov=document.getElementById("qris-overlay");
  if(!ov){ov=document.createElement("div");ov.id="qris-overlay";ov.className="overlay";ov.addEventListener("click",e=>{if(e.target===ov)closeQris()});document.body.appendChild(ov)}
- const payLabel=order.fee>0?"Total transfer":"Nominal transfer (subtotal)";
  ov.innerHTML=`<div class="modal" role="dialog" aria-modal="true" style="max-width:450px">
    <div class="mhead"><h3>Pembayaran QRIS</h3><button class="mclose" onclick="closeQris()">${I.close}</button></div>
    <div class="mbody qbox">
      <p style="color:var(--muted);font-size:.9rem">No. Pesanan <b style="color:var(--wine)">${order.orderNo}</b></p>
      <div class="qimg"><img src="${CAKEVELYS.qris}" alt="QRIS Cakevelys" onerror="this.parentElement.innerHTML='<div class=&quot;qfall&quot;>Barcode QRIS<br><br>Simpan file <b>${CAKEVELYS.qris}</b> di root repo — otomatis muncul di sini.</div>'"></div>
-     <p style="font-size:.84rem;color:var(--muted)">${payLabel}</p>
+     <p style="font-size:.84rem;color:var(--muted)">Total transfer (kue + design fee)</p>
      <div class="qamt">${rupiah(order.total)}</div>
-     ${order.fee>0?"":`<p class="muted" style="font-size:.78rem;margin-top:4px">*Belum termasuk design fee & ongkir — admin akan konfirmasi kekurangannya.</p>`}
+     <p class="muted" style="font-size:.78rem;margin-top:4px">*Ongkir (jika pakai pengiriman) dikonfirmasi admin terpisah.</p>
      <ul class="steps">
        <li><span class="n">1</span> Scan QRIS menggunakan e-wallet atau m-banking.</li>
        <li><span class="n">2</span> Bayar sesuai nominal, lalu screenshot bukti pembayaran.</li>
@@ -774,19 +838,20 @@ function buildWaMessage(o){
  L.push("*RINCIAN PESANAN*");
  o.items.forEach((it,i)=>{
    L.push((i+1)+". "+it.productName);
-   if(it.flavour)L.push("    - Rasa    : "+it.flavour);
-   if(it.shape)L.push("    - Bentuk  : "+it.shape);
-   if(it.filling)L.push("    - Topping : "+it.filling);
-   if(it.text)L.push("    - Tulisan : \""+it.text+"\"");
-   if(it.addons&&it.addons.length)L.push("    - Add-on  : "+it.addons.map(a=>a.name).join(", "));
-   L.push("    - Jumlah  : "+it.qty+" x "+rupiah(it.unitPrice)+" = "+rupiah(it.lineTotal));
+   if(it.flavour)L.push("    - Rasa     : "+it.flavour);
+   if(it.shape)L.push("    - Bentuk   : "+it.shape);
+   if(it.filling)L.push("    - Topping  : "+it.filling);
+   if(it.designLevel)L.push("    - Desain   : "+it.designLevel+(it.designFee?" (design fee "+rupiah(it.designFee)+")":""));
+   if(it.text)L.push("    - Tulisan  : \""+it.text+"\"");
+   if(it.addons&&it.addons.length)L.push("    - Add-on   : "+it.addons.map(a=>a.name).join(", "));
+   L.push("    - Harga    : "+it.qty+" x "+rupiah(it.unitPrice)+" = "+rupiah(lineProduct(it)));
  });
  L.push("");
  L.push("*PEMBAYARAN*");
- L.push("Subtotal      : "+rupiah(o.subtotal));
- L.push("Design Fee    : "+(o.fee>0?rupiah(o.fee):"(menunggu konfirmasi admin)"));
+ L.push("Subtotal kue  : "+rupiah(o.subtotal));
+ L.push("Design Fee    : "+(o.fee>0?rupiah(o.fee)+" (estimasi)":"Gratis / desain simpel"));
  L.push("Ongkir        : "+(o.method.indexOf("Pick")>=0?"- (ambil sendiri)":"(sesuai metode)"));
- L.push("Total         : "+rupiah(o.total)+(o.fee>0?"":" (+ design fee)"));
+ L.push("Total         : "+rupiah(o.total));
  L.push("Metode Bayar  : QRIS — sudah transfer");
  L.push("");
  L.push("*REFERENSI DESAIN*");
