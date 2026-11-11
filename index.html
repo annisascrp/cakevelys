@@ -38,15 +38,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 input,select,textarea{font-family:inherit;font-size:1rem;color:var(--ink)}ul{list-style:none;padding:0}
 ::selection{background:var(--blush-2);color:var(--wine-ink)}
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.section{padding:70px 0}
-@media(min-width:860px){.section{padding:92px 0}}
+.section{padding:48px 0}
+@media(min-width:860px){.section{padding:66px 0}}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--ink);letter-spacing:-.005em}
 .serif-it{font-family:var(--fd);font-style:italic;font-weight:400}
 .kicker{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--wine)}
 .kicker::before{content:"";width:22px;height:1px;background:var(--rose)}
 .kicker.center::after{content:"";width:22px;height:1px;background:var(--rose)}
 .kicker.center{justify-content:center}
-.sec-head{max-width:620px;margin-bottom:46px}
+.sec-head{max-width:620px;margin-bottom:32px}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
 .sec-head h2{font-size:clamp(1.85rem,4.4vw,2.9rem);margin-top:16px}
 .sec-head p{color:var(--body);margin-top:14px}
@@ -111,12 +111,12 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .to-top.show{opacity:1;pointer-events:auto;transform:none}.to-top svg{width:19px;height:19px}
 /* hero */
 .hero{position:relative;overflow:hidden}
-.hero-grid{display:grid;gap:40px;padding:50px 0 60px;align-items:center}
-.hero-copy h1{font-size:clamp(2.6rem,6.4vw,4.1rem);line-height:1.06;color:var(--ink);font-weight:400}
+.hero-grid{display:grid;gap:32px;padding:30px 0 36px;align-items:center}
+.hero-copy h1{font-size:clamp(2.5rem,6vw,3.9rem);line-height:1.05;color:var(--ink);font-weight:400}
 .hero-copy h1 .serif-it{color:var(--wine)}
-.hero-copy .lead{font-size:1.07rem;margin:22px 0 30px;max-width:460px}
+.hero-copy .lead{font-size:1.05rem;margin:18px 0 26px;max-width:460px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
-.hero-trust{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+.hero-trust{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
 .hero-trust b{color:var(--ink);font-weight:600}
 .hero-trust .dot{width:4px;height:4px;border-radius:50%;background:var(--rose)}
 .hero-visual{position:relative}
@@ -127,7 +127,7 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .hero-chip .hc-ic svg{width:15px;height:15px}
 .hero-seal{position:absolute;top:-14px;right:-6px;width:84px;height:84px;border-radius:50%;background:#fff;box-shadow:var(--shadow);padding:5px}
 .hero-seal img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-@media(min-width:900px){.hero-grid{grid-template-columns:1.06fr .94fr;padding:76px 0 90px;gap:56px}.hero-visual{max-width:440px;margin-left:auto}}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.06fr .94fr;padding:48px 0 58px;gap:48px}.hero-visual{max-width:410px;margin-left:auto}}
 /* menu / category */
 .cat-grid{display:grid;gap:22px;grid-template-columns:1fr}
 @media(min-width:720px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
@@ -202,6 +202,7 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .psize{font-family:var(--fd);font-size:1.12rem;font-weight:500;color:var(--ink)}
 .pprice{color:var(--wine);font-weight:600;margin-top:3px;font-size:.96rem}
 .pprice .s{font-size:.72rem;color:var(--muted);font-weight:500}
+.pprice.consult{font-size:.82rem;font-weight:600;color:var(--rose)}
 .note{background:var(--blush);border:1px solid var(--blush-2);border-radius:var(--r);padding:15px 18px;font-size:.87rem;color:var(--wine-ink);display:flex;gap:12px;align-items:flex-start}
 .note svg{flex:0 0 auto;width:19px;height:19px;margin-top:2px;color:var(--wine)}
 /* modal */
@@ -270,6 +271,14 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .srow.total{border-top:1.5px dashed var(--line);margin-top:10px;padding-top:14px;font-size:1.15rem;font-weight:600;color:var(--ink)}
 .srow.total .v{color:var(--wine);font-family:var(--fd)}
 .summary .muted{color:var(--muted);font-size:.8rem}
+.opt{font-weight:400;color:var(--muted);font-size:.78rem}
+.consult-note{display:flex;gap:11px;align-items:flex-start;background:var(--blush);border:1px solid var(--blush-2);border-radius:12px;padding:13px 15px;margin-bottom:18px;font-size:.85rem;color:var(--wine-ink)}
+.consult-note svg{flex:0 0 auto;width:18px;height:18px;margin-top:2px;color:var(--wine)}
+.consult-note .cn-link{display:inline-block;margin-top:5px;color:var(--wine);font-weight:600;font-size:.84rem}
+.consult-note .cn-link:hover{text-decoration:underline}
+.voucher-row{display:flex;gap:8px}
+.voucher-row input{flex:1;text-transform:uppercase}
+.voucher-row .btn{padding:12px 20px}
 .empty{text-align:center;padding:66px 20px}
 .empty .ei{width:82px;height:82px;border-radius:50%;background:var(--blush);color:var(--wine);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}.empty .ei svg{width:38px;height:38px}
 .empty h3{margin-bottom:8px;font-size:1.35rem;font-weight:500}.empty p{color:var(--muted);margin-bottom:22px}
@@ -395,7 +404,10 @@ const CATALOG=[
    {id:"cake-14",size:"14 cm",tag:"Karakter",price:110000,start:true,img:"14cm-customcakekarakter.jpeg"},
    {id:"cake-16",size:"16 cm",tag:"Favorit",price:150000,start:true,img:"16cm-cakecustomecharacter.jpeg"},
    {id:"cake-18",size:"18 cm",tag:"",price:180000,start:true,img:"18cm-customcakekarakter.jpeg"},
-   {id:"cake-custom",size:"Custom Size",tag:"Di atas 18 cm",price:200000,plus:true,img:null}
+   {id:"cake-20",size:"20 cm",tag:"Estimasi",price:220000,start:true,img:null},
+   {id:"cake-22",size:"22 cm",tag:"Estimasi",price:270000,start:true,img:null},
+   {id:"cake-24",size:"24 cm",tag:"Estimasi",price:320000,start:true,img:null},
+   {id:"cake-tier",size:"Tier / Bentuk Khusus",tag:"Konsultasi",consult:true,img:null}
   ]},
  {key:"cookie",title:"Custom Cookie",icon:"cookie",
   blurb:"Cookie cake tebal & chewy. Pilih rasa favoritmu, tersedia varian dengan filling.",
@@ -413,7 +425,7 @@ const CATALOG=[
   items:[
    {id:"cookie-12",size:"Bento 12 cm",tag:"Bento",price:45000,start:true,img:"bentocookie-12cm.jpeg"},
    {id:"cookie-18",size:"Giant 18 cm",tag:"Giant",price:78000,start:true,img:"18cm-giantcookiekarakter.jpeg"},
-   {id:"cookie-custom",size:"Custom Size",tag:"",price:150000,start:true,plus:true,img:null}
+   {id:"cookie-custom",size:"Custom / Jumbo",tag:"Konsultasi",consult:true,img:null}
   ]},
  {key:"mentai",title:"Mentai Cake",icon:"mentai",
   blurb:"Mentai cake gurih dengan topping melimpah. Ukuran 14 cm disarankan self pick-up / mobil.",
@@ -438,6 +450,12 @@ const DESIGN_LEVELS=[
  {id:"premium",name:"Full Custom / 3D / Detail",fee:50000,desc:"Karakter 3D, foto, atau desain sangat detail"}
 ];
 function designFeeOf(id){const l=DESIGN_LEVELS.find(x=>x.id===id);return l?l.fee:0}
+/* Voucher / kode promo — edit sesuai kebutuhan. type: "percent" (value = %) atau "amount" (value = Rp) */
+const VOUCHERS={
+ "CAKEVELYS10":{type:"percent",value:10,label:"Diskon 10%"},
+ "FIRSTBITE":{type:"amount",value:15000,label:"Potongan Rp15.000"},
+ "SWEETDAY":{type:"amount",value:25000,label:"Potongan Rp25.000 (min. Rp150rb)",min:150000}
+};
 const HERO_IMG="16cm-customcakedesignsimple.jpeg";
 const REVIEWS=[
  {stars:5,cat:"Custom Cake",title:"Cakep, sesuai request",body:"Korean cake-nya rapi dan persis seperti desain yang aku minta. Rasanya lembut, tidak terlalu manis, packaging aman sampai rumah.",name:"Dinda A.",handle:"@dindaa"},
@@ -539,7 +557,7 @@ function renderFooter(){
  document.getElementById("app-footer").innerHTML=`
  <footer class="foot"><div class="wrap"><div class="fgrid">
    <div class="fbrand"><div class="fl"><img src="${CAKEVELYS.logo}" alt="Cakevelys" onerror="this.style.display='none'"><span class="nm">Cakevelys</span></div>
-     <p>${CAKEVELYS.tagline}. Custom cake, cookie, dan mentai cake handmade dari Banyumanik, Semarang.</p>
+     <p><em>${CAKEVELYS.tagline}</em> — merayakan momen berhargamu lewat custom cake, cookie & mentai cake di Semarang.</p>
      <div class="fsoc"><a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${I.ig}</a><a href="${CAKEVELYS.waLink}" target="_blank" rel="noopener" aria-label="WhatsApp">${I.wa}</a><a href="${CAKEVELYS.mapsLink}" target="_blank" rel="noopener" aria-label="Maps">${I.pin}</a></div></div>
    <div><h5>Navigasi</h5>${NAV.map(n=>`<a href="#${n.h}">${n.l}</a>`).join("")}</div>
    <div><h5>Kontak</h5><a href="${CAKEVELYS.waLink}" target="_blank" rel="noopener">WhatsApp ${CAKEVELYS.waDisplay}</a><a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">Instagram ${CAKEVELYS.igDisplay}</a><span style="opacity:.78;font-size:.9rem;display:block;padding:5px 0">${CAKEVELYS.address}</span><span style="opacity:.78;font-size:.9rem;display:block;padding:5px 0">${CAKEVELYS.hours}</span></div>
@@ -563,9 +581,9 @@ document.querySelector("#lightbox .lbx").innerHTML=I.close;
 function viewHome(){return `
  <section class="hero"><div class="wrap hero-grid">
    <div class="hero-copy">
-     <span class="kicker reveal">Custom Cake · Banyumanik, Semarang</span>
-     <h1 class="reveal d1">Kue yang dibuat<br><span class="serif-it">khusus untukmu</span></h1>
-     <p class="lead reveal d2">Korean cake, cookie cake, hingga mentai cake — semua handmade dan bisa didesain sesuai momenmu. Dari dapur kami, untuk ceritamu.</p>
+     <span class="kicker reveal">Cakevelys · Semarang</span>
+     <h1 class="reveal d1">Setiap perayaan<br>layak jadi <span class="serif-it">tak terlupakan</span></h1>
+     <p class="lead reveal d2">Dari ucapan selamat pertama hingga momen yang lama dinanti — kami merangkai rasa dan desain yang berbicara untukmu. Ceritakan momennya, biar kami yang mewujudkan manisnya.</p>
      <div class="hero-cta reveal d2"><a href="#shop" class="btn btn-primary btn-lg">Lihat Menu ${I.arrow}</a><a href="#contact" class="btn btn-outline btn-lg">Hubungi Kami</a></div>
      <div class="hero-trust reveal d3"><span><b>Handmade</b> setiap hari</span><span class="dot"></span><span>Gratis <b>pisau & kartu ucapan</b></span><span class="dot"></span><span>Pick-up & pengiriman</span></div>
    </div>
@@ -590,8 +608,8 @@ function viewHome(){return `
    <div class="story">
      <div class="story-visual reveal"><img src="14cm-customcakekarakter.jpeg" alt="Hasil karya Cakevelys" ${FB}></div>
      <div class="reveal d1"><span class="kicker">Tentang Kami</span>
-       <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-top:14px">Dibuat tangan, <span class="serif-it">dengan hati</span></h2>
-       <p class="lead" style="margin-top:14px">Cakevelys adalah home bakery kecil di Banyumanik, Semarang. Setiap kue dibuat fresh saat ada pesanan — jadi kamu bebas menentukan ukuran, rasa, dan desainnya sendiri.</p>
+       <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-top:14px">Rasa yang dibuat <span class="serif-it">sepenuh hati</span></h2>
+       <p class="lead" style="margin-top:14px">Cakevelys menghadirkan custom cake, cookie, dan mentai cake untuk momen-momen berharga di Semarang dan sekitarnya. Setiap kue dirancang bersamamu dan dibuat segar menjelang harimu — karena perayaanmu pantas mendapatkan yang terbaik.</p>
        <div class="vlist">
          <div class="vrow"><span class="vi">${I.spark}</span><div><h4>Full Custom</h4><p>Ukuran, rasa, bentuk, karakter, hingga tulisan — semua mengikuti keinginanmu.</p></div></div>
          <div class="vrow"><span class="vi">${I.cake}</span><div><h4>Fresh & Handmade</h4><p>Dibuat per order. Cake tahan ±5 hari, cookies hingga 2 minggu di kulkas.</p></div></div>
@@ -609,13 +627,13 @@ function viewHome(){return `
  </div></section>
 
  <section class="section" style="padding-top:0"><div class="wrap">
-   <div class="ctaband reveal"><div class="inr"><h2>Siap pesan kue <span class="serif-it">custom-mu?</span></h2><p>Ceritakan idemu, kami bantu wujudkan jadi kue yang berkesan.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="#shop" class="btn btn-light btn-lg">Mulai Pesan</a><a href="${CAKEVELYS.waLink}?text=${encodeURIComponent("Halo Cakevelys, saya ingin konsultasi desain kue custom.")}" target="_blank" rel="noopener" class="btn btn-wa btn-lg">${I.wa} Konsultasi</a></div></div></div>
+   <div class="ctaband reveal"><div class="inr"><h2>Ada momen yang <span class="serif-it">ingin dirayakan?</span></h2><p>Ceritakan idenya pada kami. Dari sketsa di kepalamu hingga kue yang siap membuat harimu berkesan.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="#shop" class="btn btn-light btn-lg">Mulai Pesan</a><a href="${CAKEVELYS.waLink}?text=${encodeURIComponent("Halo Cakevelys, saya ingin konsultasi desain kue custom.")}" target="_blank" rel="noopener" class="btn btn-wa btn-lg">${I.wa} Konsultasi</a></div></div></div>
  </section>`;
 }
 function tCard(r,i){const stars="★".repeat(r.stars)+"☆".repeat(5-r.stars);return `<article class="tcard reveal ${i?'d'+i:''}"><span class="pcat">${r.cat}</span><div class="stars">${stars}</div><h4>${r.title}</h4><p>${r.body}</p><div class="who"><div class="av">${r.name.charAt(0)}</div><div><div class="nm">${r.name}</div><div class="hd">${r.handle}</div></div></div></article>`}
 
 function viewShop(){return `
- <div class="page-head wrap"><span class="kicker">Menu</span><h1>Katalog & <span class="serif-it">Kustomisasi</span></h1><p>Pilih produk, atur ukuran, rasa, dan desainnya, lalu masukkan ke keranjang.</p></div>
+ <div class="page-head wrap"><span class="kicker">Menu</span><h1>Katalog & <span class="serif-it">Kustomisasi</span></h1><p>Pilih produk, atur ukuran, rasa, dan desainnya, lalu masukkan ke keranjang. Cari inspirasi dulu? <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Lihat galeri desain di Instagram →</a></p></div>
  <div class="wrap">
    <div class="filters" id="shopFilters">
      <button class="filter active" data-f="all" onclick="filterShop('all',this)">Semua</button>
@@ -638,9 +656,9 @@ function viewAbout(){return `
    <div class="about-img reveal"><img src="18cm-customcakekarakter.jpeg" alt="Cakevelys" ${FB}>
      <div class="about-seal"><img src="${CAKEVELYS.logo}" alt="Logo" onerror="this.style.display='none'"><div><div class="nm">Cakevelys</div><div class="sb">Banyumanik, Semarang</div></div></div></div>
    <div class="reveal d1"><span class="kicker">From our kitchen, to yours</span>
-     <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-top:12px">Home bakery dengan <span class="serif-it">sentuhan personal</span></h2>
-     <p class="lead" style="margin-top:16px">Cakevelys membuat custom cake, cookie cake, dan mentai cake secara handmade di Banyumanik, Semarang. Setiap kue punya karakter tersendiri karena dibuat sesuai permintaan — dari bento untuk surprise mendadak hingga korean cake untuk momen spesial.</p>
-     <p class="lead" style="margin-top:12px">Setiap pembelian sudah termasuk pisau dan kartu ucapan. Pemesanan dilakukan lewat website ini, pembayaran via QRIS, lalu dikonfirmasi melalui WhatsApp bersama referensi desainmu.</p>
+     <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-top:12px">Kue yang menyimpan <span class="serif-it">ceritamu</span></h2>
+     <p class="lead" style="margin-top:16px">Cakevelys hadir untuk merayakan momen-momen yang berarti — ulang tahun, kelulusan, lamaran, atau sekadar hari yang ingin kamu istimewakan. Setiap custom cake, cookie, dan mentai cake kami rancang bersamamu, lalu dibuat segar menjelang harimu.</p>
+     <p class="lead" style="margin-top:12px">Kami percaya rasa dan desain bisa menyampaikan hal yang kadang sulit diucapkan. Maka setiap detail kami kerjakan dengan sungguh-sungguh — lengkap dengan pisau dan kartu ucapan di setiap pesanan.</p>
      <a href="#shop" class="btn btn-primary btn-lg mt-16">Lihat Menu ${I.arrow}</a></div>
  </div></section>
  <section class="section" style="background:var(--cream-2)"><div class="wrap">
@@ -688,13 +706,12 @@ function renderShop(){
  const root=document.getElementById("shop-root");if(!root)return;
  root.innerHTML=CATALOG.map(cat=>{
   const cards=cat.items.map(it=>{
-   const price=it.fillings?it.fillings[0].price:it.price;
-   const prefix=(it.start||it.fillings)?"mulai ":"";const plus=it.plus?"++":"";
    const tag=it.tag?`<span class="ptag">${it.tag}</span>`:"";
-   const media=it.img?`<img src="${it.img}" alt="${cat.title} ${it.size}" loading="lazy" ${FB}>`:`<div class="ph">${catIcon(cat.key)}<span>Contoh via WhatsApp</span></div>`;
+   const media=it.img?`<img src="${it.img}" alt="${cat.title} ${it.size}" loading="lazy" ${FB}>`:`<div class="ph">${catIcon(cat.key)}<span>${it.consult?"Didesain khusus":"Contoh via WhatsApp"}</span></div>`;
+   const priceHTML=it.consult?`<div class="pprice consult">Harga via konsultasi</div>`:`<div class="pprice"><span class="s">${(it.start||it.fillings)?"mulai ":""}</span>${rupiah(it.fillings?it.fillings[0].price:it.price)}${it.plus?"++":""}</div>`;
    return `<article class="pcard reveal" onclick="openCustomizer('${cat.key}','${it.id}')" role="button" tabindex="0">
-     <div class="pmedia">${tag}${media}<div class="peek"><span>Kustom & Pesan</span></div></div>
-     <div class="pbody"><div class="psize">${it.size}</div><div class="pprice"><span class="s">${prefix}</span>${rupiah(price)}${plus}</div></div></article>`;
+     <div class="pmedia">${tag}${media}<div class="peek"><span>${it.consult?"Konsultasi":"Kustom & Pesan"}</span></div></div>
+     <div class="pbody"><div class="psize">${it.size}</div>${priceHTML}</div></article>`;
   }).join("");
   return `<section class="cat-section" id="cat-${cat.key}" data-cat="${cat.key}"><div class="cat-head"><span class="cicon">${catIcon(cat.key)}</span><div><h2>${cat.title}</h2><p>${cat.blurb}</p></div></div><div class="product-grid">${cards}</div></section>`;
  }).join("");
@@ -718,21 +735,26 @@ function buildModal(cat,item){
  let fl="";if(cat.options?.flavour){const o=cat.options.flavour.choices.map(c=>`<option value="${c.name}" data-add="${c.add}">${c.name}${c.desc?" — "+c.desc:""}</option>`).join("");fl=`<div class="field"><label>${cat.options.flavour.label} <span class="req">*</span></label><select id="cz-flavour" onchange="onFlavourChange()">${o}</select></div>`}
  let sh="";if(cat.options?.shape){const ch=cat.options.shape.choices.map((c,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="onShapePick(this,'${c.name}')">${c.name}</button>`).join("");sh=`<div class="field"><label>${cat.options.shape.label} <span class="req">*</span></label><div class="chips" id="cz-shape">${ch}</div></div>`}
  let fi="";if(item.fillings){const ch=item.fillings.map((f,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="onFillingPick(this,'${f.name}',${f.price})">${f.name} · ${rupiah(f.price)}</button>`).join("");fi=`<div class="field"><label>Topping <span class="req">*</span></label><div class="chips" id="cz-filling">${ch}</div></div>`}
- let tx="";if(cat.hasText){tx=`<div class="field"><label>Request Tulisan / Karakter</label><textarea id="cz-text" placeholder="Contoh: Tulisan 'Happy Birthday Sarah', karakter Hello Kitty, warna pastel pink..." oninput="CZ.text=this.value"></textarea><div class="hint">Foto referensi bisa dikirim saat konfirmasi di WhatsApp.</div></div>`}
+ let tx="";if(cat.hasText){tx=`<div class="field"><label>Request Tulisan / Karakter</label><textarea id="cz-text" placeholder="Contoh: Tulisan 'Happy Birthday Sarah', karakter Hello Kitty, warna pastel pink..." oninput="CZ.text=this.value"></textarea><div class="hint">Butuh inspirasi? Intip galeri desain kami di <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Instagram @cakevelys</a>. Foto referensi dikirim via WhatsApp setelah pembayaran.</div></div>`}
  const dl=`<div class="field"><label>Tingkat Kerumitan Desain <span class="req">*</span></label><div class="levels" id="cz-levels">${DESIGN_LEVELS.map((l,i)=>`<button type="button" class="level ${i===0?"selected":""}" onclick="onLevelPick(this,'${l.id}')"><span class="lv-top"><span class="lv-name">${l.name}</span><span class="lv-fee">${l.fee?"+"+rupiah(l.fee):"Gratis"}</span></span><span class="lv-desc">${l.desc}</span></button>`).join("")}</div><div class="hint">Design fee otomatis sesuai tingkat kerumitan — estimasi, final dikonfirmasi admin.</div></div>`;
  const ad=ADDONS.map(a=>a.qty?`<label class="addon"><input type="checkbox" onchange="onAddonToggle('${a.id}',this.checked)"><span class="an">${a.name} <span class="ap">(${a.note})</span></span><span class="qm"><input type="number" id="addon-qty-${a.id}" min="1" value="1" onchange="onAddonQty('${a.id}',this.value)"><span style="font-size:.78rem;color:var(--muted)">pcs</span></span></label>`:`<label class="addon"><input type="checkbox" onchange="onAddonToggle('${a.id}',this.checked)"><span class="an">${a.name}</span><span class="ap">${a.note}</span></label>`).join("");
- const waC=encodeURIComponent(`Halo Cakevelys, saya ingin konsultasi desain untuk ${cat.title} ukuran ${item.size}. Boleh dibantu?`);
- const media=item.img?`<img src="${item.img}" alt="${cat.title} ${item.size}" onerror="this.src='${CAKEVELYS.logo}';this.style.objectFit='contain';this.style.padding='22px';this.style.background='#fff'">`:`<div class="ph">${catIcon(cat.key)}<span>Contoh desain via WhatsApp</span></div>`;
+ const isConsult=!!item.consult;
+ const media=item.img?`<img src="${item.img}" alt="${cat.title} ${item.size}" onerror="this.src='${CAKEVELYS.logo}';this.style.objectFit='contain';this.style.padding='22px';this.style.background='#fff'">`:`<div class="ph">${catIcon(cat.key)}<span>${isConsult?"Didesain khusus bersamamu":"Contoh desain via WhatsApp"}</span></div>`;
+ const estNote=item.start?`<div class="note" style="margin-bottom:14px">${I.info}<span>Harga ukuran ini adalah <b>estimasi awal</b>. Kami sarankan <b>konsultasi dulu</b> agar harga final pasti sebelum membayar.</span></div>`:"";
+ const noteHTML=isConsult
+   ?`<div class="note">${I.info}<span>Ukuran & bentuk khusus harganya <b>menyesuaikan desain</b>. Yuk konsultasikan dulu — kami bantu hitung dan kabari harga pastinya.</span></div>`
+   :`<div class="note">${I.info}<span>Design fee di bawah adalah <b>estimasi</b> dari tingkat kesulitan. Angka final dikonfirmasi admin saat konsultasi.</span></div>`;
+ const footHTML=isConsult
+   ?`<div class="mfoot"><button class="btn btn-wa btn-block btn-lg" onclick="consultNow()">${I.wa} Konsultasi Harga via WhatsApp</button><p class="muted" style="text-align:center;font-size:.76rem">Pilihanmu di atas ikut terkirim agar admin bisa langsung estimasi.</p></div>`
+   :`<div class="mfoot"><div class="cz-break" id="cz-break">${czBreakHTML()}</div><div class="mtotal"><span class="l">Estimasi total</span><span class="v" id="cz-total">${rupiah(czTotal())}</span></div><div class="row"><button class="btn btn-outline" style="flex:1" onclick="consultNow()">Konsultasi Dulu</button><button class="btn btn-primary" style="flex:1.3" onclick="addCurrentToCart()">Tambah ke Keranjang</button></div></div>`;
  ov.innerHTML=`<div class="modal" role="dialog" aria-modal="true">
    <div class="mhead"><h3>${cat.title} · ${item.size}</h3><button class="mclose" onclick="closeCustomizer()">${I.close}</button></div>
-   <div class="mbody"><div class="mmedia">${media}</div>${fl}${sh}${fi}${tx}${dl}
+   <div class="mbody"><div class="mmedia">${media}</div>${estNote}${fl}${sh}${fi}${tx}${dl}
      <div class="field"><label>Add-ons <span style="font-weight:400;color:var(--muted);font-size:.8rem">(opsional)</span></label><div class="addon-list">${ad}</div></div>
      <div class="field"><label>Jumlah</label><div class="qty"><button type="button" onclick="onQty(-1)">−</button><input type="number" id="cz-qty" value="1" min="1" onchange="onQtyInput(this.value)"><button type="button" onclick="onQty(1)">+</button></div></div>
-     <div class="note">${I.info}<span>Harga <b>belum termasuk design fee</b>. Design fee & ongkir dikonfirmasi admin via WhatsApp sesuai tingkat kerumitan desain.</span></div>
+     ${noteHTML}
    </div>
-   <div class="mfoot"><div class="cz-break" id="cz-break">${czBreakHTML()}</div><div class="mtotal"><span class="l">Estimasi total</span><span class="v" id="cz-total">${rupiah(czTotal())}</span></div>
-     <div class="row"><a class="btn btn-outline" href="${CAKEVELYS.waLink}?text=${waC}" target="_blank" rel="noopener" style="flex:1">Konsultasi</a><button class="btn btn-primary" style="flex:1.4" onclick="addCurrentToCart()">Tambah ke Keranjang</button></div>
-   </div></div>`;
+   ${footHTML}</div>`;
 }
 function onFlavourChange(){const s=document.getElementById("cz-flavour"),o=s.options[s.selectedIndex];CZ.flavour=o.value;CZ.flavourAdd=Number(o.dataset.add||0);refreshTotal()}
 function onShapePick(b,n){document.querySelectorAll("#cz-shape .chip").forEach(c=>c.classList.remove("selected"));b.classList.add("selected");CZ.shape=n}
@@ -748,6 +770,22 @@ function czProduct(){return czUnitPrice()*(CZ.qty||1)}
 function czDesignFee(){return designFeeOf(CZ.level)}
 function czTotal(){return czProduct()+czDesignFee()}
 function czBreakHTML(){const f=czDesignFee();return `<span>Kue ${rupiah(czProduct())}</span>${f?`<span> + Design fee ${rupiah(f)}</span>`:`<span> · desain gratis</span>`}`}
+function consultNow(){
+ const cat=getCategory(CZ.catKey),item=getItem(CZ.catKey,CZ.itemId);
+ const lv=DESIGN_LEVELS.find(l=>l.id===CZ.level)||DESIGN_LEVELS[0];
+ const L=[];
+ L.push("Halo Cakevelys, saya mau konsultasi desain dulu sebelum pesan:");
+ L.push("");
+ L.push("Produk   : "+cat.title+" "+item.size);
+ if(CZ.flavour)L.push("Rasa     : "+CZ.flavour);
+ if(CZ.shape)L.push("Bentuk   : "+CZ.shape);
+ if(CZ.filling)L.push("Topping  : "+CZ.filling);
+ L.push("Desain   : "+lv.name);
+ if(CZ.text)L.push("Request  : "+CZ.text);
+ L.push("");
+ L.push("Boleh dibantu estimasi harga & design fee-nya? Nanti foto referensinya saya kirim di sini juga.");
+ window.open(`${CAKEVELYS.waLink}?text=${encodeURIComponent(L.join("\n"))}`,"_blank");
+}
 function addCurrentToCart(){
  const cat=getCategory(CZ.catKey),item=getItem(CZ.catKey,CZ.itemId);
  const lv=DESIGN_LEVELS.find(l=>l.id===CZ.level)||DESIGN_LEVELS[0];
@@ -770,23 +808,47 @@ function renderCart(){
    <div style="display:flex;align-items:center;gap:14px"><span class="lp">${rupiah(it.lineTotal)}</span><button class="rm" onclick="removeItem('${it.uid}')">${I.trash} Hapus</button></div></div></div></div>`;
  }).join("");
  const subProduct=cart.reduce((s,it)=>s+lineProduct(it),0);
- const feeTotal=cart.reduce((s,it)=>s+(it.designFee||0),0);
- const grand=subProduct+feeTotal;
+ const estFee=cart.reduce((s,it)=>s+(it.designFee||0),0);
+ window.__sub=subProduct;window.__estfee=estFee;window.__voucher=null;
  root.innerHTML=`<div class="cart-layout"><div><h2 style="margin-bottom:18px;font-size:1.45rem;font-weight:500">Keranjang · ${cartCount()} item</h2>${items}<a href="#shop" class="btn btn-ghost">${I.chevL} Lanjut belanja</a></div>
-  <div><div class="summary"><h3>Form Konfirmasi Pesanan</h3><p class="sub">Data ini otomatis tersusun rapi di pesan WhatsApp.</p>
+  <div><div class="summary"><h3>Konfirmasi Pesanan</h3><p class="sub">Isi data di bawah — semuanya tersusun rapi otomatis di WhatsApp.</p>
+   <div class="consult-note">${I.info}<div>Masih ragu soal design fee? <b>Konsultasi dulu</b> biar harganya pasti sebelum bayar. <a class="cn-link" href="${CAKEVELYS.waLink}?text=${encodeURIComponent("Halo Cakevelys, saya mau konsultasi desain & harga sebelum checkout.")}" target="_blank" rel="noopener">Konsultasi via WhatsApp →</a><a class="cn-link" href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">Lihat inspirasi desain di Instagram →</a></div></div>
    <div class="field"><label>Atas Nama <span class="req">*</span></label><input type="text" id="buyer-name" placeholder="Nama pemesan" value="${escapeAttr(prof.name)}"></div>
    <div class="field"><label>No. WhatsApp <span class="req">*</span></label><input type="tel" id="buyer-phone" placeholder="08xxxxxxxxxx" value="${escapeAttr(prof.phone)}"></div>
    <div class="field"><label>Tanggal Ambil / Kirim <span class="req">*</span></label><input type="date" id="buyer-date" min="${minPickupDate()}"><div class="hint">Pemesanan maksimal H-1.</div></div>
    <div class="field"><label>Metode Pengambilan</label><select id="buyer-method"><option value="Self Pick-up">Self Pick-up (ambil sendiri)</option><option value="Pengiriman Ojol (Shopee/Gosend/Grab)">Pengiriman Ojol (Shopee/Gosend/Grab)</option></select></div>
-   <div class="field"><label>Deskripsi / Link Referensi Desain</label><textarea id="buyer-ref" placeholder="Jelaskan desain yang kamu mau, atau tempel link Pinterest/IG. Foto referensi bisa dikirim langsung di chat WhatsApp."></textarea></div>
+   <div class="field"><label>Design Fee final dari admin <span class="opt">(isi jika sudah konsultasi)</span></label><input type="number" id="buyer-fee" min="0" placeholder="Kosongkan = pakai estimasi otomatis" oninput="recalc()"></div>
+   <div class="field"><label>Kode Voucher <span class="opt">(opsional)</span></label><div class="voucher-row"><input type="text" id="voucher-code" placeholder="mis. CAKEVELYS10" oninput="this.value=this.value.toUpperCase()"><button class="btn btn-dark" type="button" onclick="applyVoucher()">Pakai</button></div><div class="hint" id="voucher-msg"></div></div>
    <div class="field"><label>Catatan (opsional)</label><textarea id="buyer-note" placeholder="Jam ambil, request tambahan, dll."></textarea></div>
    <div class="srow"><span>Subtotal kue</span><span>${rupiah(subProduct)}</span></div>
-   <div class="srow"><span>Design fee ${feeTotal?"":'<span class="muted">(desain simpel)</span>'}</span><span>${rupiah(feeTotal)}</span></div>
+   <div class="srow"><span>Design fee <span class="muted" id="feetag">(estimasi)</span></span><span id="sumfee">${rupiah(estFee)}</span></div>
+   <div class="srow hidden" id="voucher-srow"><span>Voucher <span class="muted" id="vouchertag"></span></span><span id="sumvoucher" style="color:var(--wine)">-</span></div>
    <div class="srow"><span class="muted">Ongkir</span><span class="muted">sesuai metode</span></div>
-   <div class="srow total"><span>Total</span><span class="v">${rupiah(grand)}</span></div>
-   <p class="muted" style="margin-top:8px">Design fee adalah estimasi otomatis. Total final (termasuk ongkir) dikonfirmasi admin via WhatsApp.</p>
+   <div class="srow total"><span>Total</span><span class="v" id="sumtotal">${rupiah(subProduct+estFee)}</span></div>
+   <p class="muted" style="margin-top:8px">Bila belum konsultasi, design fee & total masih estimasi. Ongkir dikonfirmasi admin via WhatsApp.</p>
    <button class="btn btn-primary btn-block btn-lg mt-16" onclick="startCheckout()">Checkout · Bayar QRIS ${I.arrow}</button>
   </div></div></div>`;
+}
+function effFee(){const f=Number(document.getElementById("buyer-fee")?.value||0);return f>0?{fee:f,confirmed:true}:{fee:window.__estfee||0,confirmed:false}}
+function discountFor(base){const code=window.__voucher;if(!code)return 0;const v=VOUCHERS[code];if(!v)return 0;if(v.min&&base<v.min)return 0;let d=v.type==="percent"?Math.round(base*v.value/100):v.value;return Math.min(d,base)}
+function recalc(){
+ const ef=effFee(),sub=window.__sub||0,base=sub+ef.fee,disc=discountFor(base);
+ const sf=document.getElementById("sumfee");if(sf)sf.textContent=rupiah(ef.fee);
+ const ft=document.getElementById("feetag");if(ft)ft.textContent=ef.confirmed?"(dari admin)":"(estimasi)";
+ const vr=document.getElementById("voucher-srow");
+ if(window.__voucher&&disc>0){vr.classList.remove("hidden");document.getElementById("vouchertag").textContent=window.__voucher;document.getElementById("sumvoucher").textContent="− "+rupiah(disc)}
+ else if(vr){vr.classList.add("hidden")}
+ const st=document.getElementById("sumtotal");if(st)st.textContent=rupiah(base-disc);
+}
+function applyVoucher(){
+ const code=(document.getElementById("voucher-code").value||"").trim().toUpperCase();
+ const msg=document.getElementById("voucher-msg");
+ if(!code){window.__voucher=null;msg.textContent="";msg.style.color="";recalc();return}
+ const v=VOUCHERS[code];
+ if(!v){window.__voucher=null;msg.textContent="Kode voucher tidak ditemukan.";msg.style.color="var(--wine)";recalc();return}
+ const base=(window.__sub||0)+effFee().fee;
+ if(v.min&&base<v.min){window.__voucher=null;msg.textContent=`Minimal belanja ${rupiah(v.min)} untuk voucher ini.`;msg.style.color="var(--wine)";recalc();return}
+ window.__voucher=code;msg.textContent=`✓ ${v.label} diterapkan.`;msg.style.color="#1FA855";recalc();
 }
 function changeQty(uid,d){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)return;it.qty=Math.max(1,it.qty+d);it.lineTotal=it.unitPrice*it.qty;saveCart(c);renderCart()}
 function setQty(uid,v){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)return;it.qty=Math.max(1,Number(v)||1);it.lineTotal=it.unitPrice*it.qty;saveCart(c);renderCart()}
@@ -798,8 +860,9 @@ function startCheckout(){
  saveProfile({name,phone});
  const cart=getCart();
  const subtotal=cart.reduce((s,it)=>s+lineProduct(it),0);
- const fee=cart.reduce((s,it)=>s+(it.designFee||0),0);
- openQris({orderNo:genOrderNo(),name,phone,date,method:val("buyer-method"),ref:val("buyer-ref"),fee,note:val("buyer-note"),items:cart,subtotal,total:subtotal+fee,createdAt:new Date().toISOString()});
+ const ef=effFee(),base=subtotal+ef.fee,disc=discountFor(base);
+ const voucher=(window.__voucher&&disc>0)?{code:window.__voucher,amount:disc}:null;
+ openQris({orderNo:genOrderNo(),name,phone,date,method:val("buyer-method"),note:val("buyer-note"),items:cart,subtotal,fee:ef.fee,feeConfirmed:ef.confirmed,voucher,total:base-disc,createdAt:new Date().toISOString()});
 }
 function openQris(order){
  let ov=document.getElementById("qris-overlay");
@@ -849,14 +912,14 @@ function buildWaMessage(o){
  L.push("");
  L.push("*PEMBAYARAN*");
  L.push("Subtotal kue  : "+rupiah(o.subtotal));
- L.push("Design Fee    : "+(o.fee>0?rupiah(o.fee)+" (estimasi)":"Gratis / desain simpel"));
+ L.push("Design fee    : "+(o.fee>0?rupiah(o.fee)+(o.feeConfirmed?" (sesuai konsultasi)":" (estimasi)"):"Gratis / desain simpel"));
+ if(o.voucher)L.push("Voucher       : "+o.voucher.code+" (- "+rupiah(o.voucher.amount)+")");
  L.push("Ongkir        : "+(o.method.indexOf("Pick")>=0?"- (ambil sendiri)":"(sesuai metode)"));
  L.push("Total         : "+rupiah(o.total));
- L.push("Metode Bayar  : QRIS — sudah transfer");
+ L.push("Metode bayar  : QRIS - sudah transfer");
  L.push("");
- L.push("*REFERENSI DESAIN*");
- L.push(o.ref?o.ref:"(saya lampirkan fotonya di chat ini)");
- L.push("Foto referensi & bukti pembayaran saya kirim di chat ini ya.");
+ L.push("*LANGKAH SELANJUTNYA*");
+ L.push("Saya akan langsung kirim foto *referensi desain* di chat ini, sekalian lampirkan *bukti pembayaran* ya.");
  if(o.note){L.push("");L.push("*CATATAN*");L.push(o.note)}
  L.push("");
  L.push("Terima kasih, mohon diproses ya 🤍");
@@ -865,7 +928,7 @@ function buildWaMessage(o){
 function showThankYou(o){
  const root=document.getElementById("cart-root");if(!root)return;
  root.innerHTML=`<div class="empty"><div class="ei">${I.check}</div><h3>Pesanan siap dikonfirmasi</h3>
-  <p>No. Pesanan <b style="color:var(--wine)">${o.orderNo}</b><br>Tab WhatsApp sudah terbuka — tinggal kirim form beserta bukti bayar & foto referensi desain.<br><span style="font-size:.85rem">Jika tab WhatsApp tidak terbuka otomatis, klik tombol di bawah.</span></p>
+  <p>No. Pesanan <b style="color:var(--wine)">${o.orderNo}</b><br>Tab WhatsApp sudah terbuka — tinggal kirim form beserta bukti bayar & foto referensi desain.<br><span style="font-size:.85rem">Butuh inspirasi desain? Intip <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Instagram @cakevelys</a>. Jika tab WhatsApp tidak terbuka otomatis, klik tombol di bawah.</span></p>
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn-wa btn-lg" href="${CAKEVELYS.waLink}?text=${encodeURIComponent(buildWaMessage(o))}" target="_blank" rel="noopener">${I.wa} Buka WhatsApp</a><a class="btn btn-outline btn-lg" href="#shop">Pesan Lagi</a></div></div>`;
  window.scrollTo({top:0,behavior:"smooth"});
 }
