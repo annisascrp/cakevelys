@@ -222,6 +222,8 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .mmedia .ph svg{width:46px;height:46px;opacity:.7}.mmedia .ph span{font-size:.8rem;color:var(--muted)}
 .field{margin-bottom:17px}
 .field>label{display:block;font-weight:600;font-size:.86rem;margin-bottom:8px;color:var(--ink)}
+.field.two{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
+.field.two label{display:block;font-weight:600;font-size:.86rem;margin-bottom:8px;color:var(--ink)}
 .field .req{color:var(--wine)}
 .field select,.field input[type=text],.field input[type=tel],.field input[type=number],.field input[type=date],.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;transition:.15s}
 .field select:focus,.field input:focus,.field textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px var(--blush)}
@@ -279,6 +281,27 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .voucher-row{display:flex;gap:8px}
 .voucher-row input{flex:1;text-transform:uppercase}
 .voucher-row .btn{padding:12px 20px}
+.pickup-date{display:flex;align-items:center;gap:10px;background:var(--cream-2);border-radius:10px;padding:11px 14px;margin-bottom:16px;font-size:.88rem;color:var(--ink)}
+.pickup-date svg{width:17px;height:17px;color:var(--wine);flex:0 0 auto}
+.dbx{background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:16px}
+.dbx-head{display:flex;align-items:center;gap:9px;font-size:.92rem;color:var(--ink);margin-bottom:14px;flex-wrap:wrap}
+.dbx-head svg{width:19px;height:19px;color:var(--wine)}
+.dbx-head b{font-weight:600}
+.dbx-head span{font-size:.74rem;color:var(--muted);width:100%}
+.dbx .field:last-of-type{margin-bottom:0}
+.dbx-msg{font-size:.82rem;margin-top:4px;color:var(--muted)}
+.dbx-msg.ok{color:#1A8F4C}.dbx-msg.err{color:var(--wine)}
+.co-choice{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.receipt{max-width:540px;margin:0 auto;text-align:center;padding:40px 10px}
+.receipt .ei{width:80px;height:80px;border-radius:50%;background:var(--blush);color:var(--wine);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.receipt .ei svg{width:38px;height:38px}
+.receipt h3{font-size:1.5rem;font-weight:500}
+.receipt .rsub{color:var(--body);margin:10px auto 22px;max-width:420px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;text-align:left;max-width:380px;margin:0 auto}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.rrow:last-child{border-bottom:none}.rrow span{color:var(--muted)}
+.rins{font-size:.85rem;color:var(--muted);margin:18px 0 20px}.rins a{color:var(--wine);font-weight:600}
+.ractions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .empty{text-align:center;padding:66px 20px}
 .empty .ei{width:82px;height:82px;border-radius:50%;background:var(--blush);color:var(--wine);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}.empty .ei svg{width:38px;height:38px}
 .empty h3{margin-bottom:8px;font-size:1.35rem;font-weight:500}.empty p{color:var(--muted);margin-bottom:22px}
@@ -333,6 +356,17 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .hw .hn svg{width:18px;height:18px}
 .hw b{display:block;color:var(--ink);font-size:.92rem;margin-bottom:2px;font-weight:600}
 .hw p{font-size:.82rem;color:var(--muted);line-height:1.5}
+/* instagram banner */
+.ig-banner{display:flex;align-items:center;gap:15px;background:linear-gradient(100deg,var(--wine),var(--wine-ink));color:#fff;border-radius:16px;padding:16px 20px;margin-top:16px;transition:.25s var(--e);box-shadow:var(--shadow-sm)}
+.ig-banner:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.ig-banner .igb-ic{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+.ig-banner .igb-ic svg{width:24px;height:24px}
+.ig-banner .igb-tx{flex:1;min-width:0}
+.ig-banner .igb-tx b{display:block;font-size:.98rem;font-weight:600}
+.ig-banner .igb-tx span{font-size:.82rem;opacity:.85}
+.ig-banner .igb-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.88rem;white-space:nowrap}
+.ig-banner .igb-go svg{width:16px;height:16px}
+@media(max-width:620px){.ig-banner .igb-go{display:none}}
 /* account */
 .acard{max-width:500px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow-sm)}
 .oitem{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
@@ -456,6 +490,29 @@ const VOUCHERS={
  "FIRSTBITE":{type:"amount",value:15000,label:"Potongan Rp15.000"},
  "SWEETDAY":{type:"amount",value:25000,label:"Potongan Rp25.000 (min. Rp150rb)",min:150000}
 };
+/* Lokasi toko & ongkir — khusus Kota Semarang, maksimal 25 km. Sesuaikan bila perlu. */
+const STORE_ORIGIN="Villa Krista Blok A5, Gedawang, Banyumanik, Kota Semarang";
+const MAPS_DIR=`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(STORE_ORIGIN)}`;
+/* Kecamatan Kota Semarang + estimasi jarak dari toko (km). Edit sesuai kebutuhan. */
+const AREAS=[
+ {n:"Banyumanik",km:2},{n:"Tembalang",km:4},{n:"Candisari",km:5},{n:"Gajahmungkur",km:6},
+ {n:"Semarang Selatan",km:7},{n:"Pedurungan",km:9},{n:"Gayamsari",km:9},{n:"Gunungpati",km:10},
+ {n:"Semarang Tengah",km:10},{n:"Semarang Timur",km:11},{n:"Semarang Barat",km:12},{n:"Semarang Utara",km:12},
+ {n:"Genuk",km:14},{n:"Ngaliyan",km:14},{n:"Mijen",km:15},{n:"Tugu",km:18}
+];
+const ONGKIR={maxKm:25, motorPerKmOver5:3000, mobilPerKmOver5:6000};
+function calcOngkir(km,veh){
+ km=Number(km)||0;
+ if(km<=0)return {ok:false,msg:"Masukkan estimasi jarak dulu."};
+ if(km>ONGKIR.maxKm)return {ok:false,msg:`Di luar jangkauan (maks ${ONGKIR.maxKm} km). Silakan pilih Self Pick-up.`};
+ let c;
+ if(km<=3)c=veh==="mobil"?30000:12000;
+ else if(km<=5)c=veh==="mobil"?40000:15000;
+ else{const ex=Math.ceil(km-5);c=veh==="mobil"?40000+ex*ONGKIR.mobilPerKmOver5:15000+ex*ONGKIR.motorPerKmOver5}
+ return {ok:true,cost:c};
+}
+function sizeCm(it){const m=(it.size||"").match(/(\d+)\s*cm/i);return m?Number(m[1]):0}
+function cartHasBig(cart){return cart.some(it=>(it.catKey==="cake"||it.catKey==="mentai")&&sizeCm(it)>16)}
 const HERO_IMG="16cm-customcakedesignsimple.jpeg";
 const REVIEWS=[
  {stars:5,cat:"Custom Cake",title:"Cakep, sesuai request",body:"Korean cake-nya rapi dan persis seperti desain yang aku minta. Rasanya lembut, tidak terlalu manis, packaging aman sampai rumah.",name:"Dinda A.",handle:"@dindaa"},
@@ -514,6 +571,7 @@ const I={
  spark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>',
  gift:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9"/><path d="M12 8v13"/><path d="M12 8S10.5 3 8 4.5 10 8 12 8zm0 0s1.5-5 4-3.5S14 8 12 8z"/></svg>',
  pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+ truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="13" height="10" rx="1.5"/><path d="M14 9h4l3 3v4h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>',
  bag:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="38" height="38"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>'
 };
 function catIcon(k){return k==="cake"?I.cake:k==="cookie"?I.cookie:I.mentai}
@@ -595,7 +653,7 @@ function viewHome(){return `
  </div></section>
 
  <section class="section"><div class="wrap">
-   <div class="sec-head"><span class="kicker reveal">Menu Kami</span><h2 class="reveal d1">Tiga kategori, <span class="serif-it">tak terbatas</span> kemungkinan</h2></div>
+   <div class="sec-head"><span class="kicker reveal">Pilihan Kami</span><h2 class="reveal d1">Tiga wujud, <span class="serif-it">satu niat</span> — membuat harimu dikenang</h2><p class="reveal d1">Mulai dari sketsa di kepalamu. Kami yang menerjemahkannya jadi rasa.</p></div>
    <div class="cat-grid">
      ${CATALOG.map((c,i)=>`<a onclick="goShop('${c.key}')" class="catc reveal ${i?'d'+i:''}">
        <div class="cm"><img src="${c.cardImg}" alt="${c.title}" loading="lazy" ${FB}></div>
@@ -621,7 +679,7 @@ function viewHome(){return `
  </div></section>
 
  <section class="section"><div class="wrap">
-   <div class="sec-head center"><span class="kicker center reveal">Testimoni</span><h2 class="reveal d1">Kata <span class="serif-it">pelanggan</span></h2></div>
+   <div class="sec-head center"><span class="kicker center reveal">Cerita Mereka</span><h2 class="reveal d1">Mereka merayakan. <span class="serif-it">Kami mengabadikan.</span></h2></div>
    <div class="tgrid">${REVIEWS.slice(0,3).map((r,i)=>tCard(r,i)).join("")}</div>
    <div style="text-align:center;margin-top:30px"><a href="#review" class="btn btn-ghost reveal">Lihat semua testimoni ${I.arrow}</a></div>
  </div></section>
@@ -633,8 +691,13 @@ function viewHome(){return `
 function tCard(r,i){const stars="★".repeat(r.stars)+"☆".repeat(5-r.stars);return `<article class="tcard reveal ${i?'d'+i:''}"><span class="pcat">${r.cat}</span><div class="stars">${stars}</div><h4>${r.title}</h4><p>${r.body}</p><div class="who"><div class="av">${r.name.charAt(0)}</div><div><div class="nm">${r.name}</div><div class="hd">${r.handle}</div></div></div></article>`}
 
 function viewShop(){return `
- <div class="page-head wrap"><span class="kicker">Menu</span><h1>Katalog & <span class="serif-it">Kustomisasi</span></h1><p>Pilih produk, atur ukuran, rasa, dan desainnya, lalu masukkan ke keranjang. Cari inspirasi dulu? <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Lihat galeri desain di Instagram →</a></p></div>
+ <div class="page-head wrap"><span class="kicker">Menu</span><h1>Pilih kanvas <span class="serif-it">untuk ceritamu</span></h1><p>Tentukan ukuran, rasa, dan desainnya. Setiap pilihan adalah awal dari sesuatu yang manis.</p></div>
  <div class="wrap">
+   <a class="ig-banner" href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">
+     <span class="igb-ic">${I.ig}</span>
+     <span class="igb-tx"><b>Belum kebayang desainnya?</b><span>Lihat ratusan karya nyata kami di Instagram sebagai referensi — langsung terhubung.</span></span>
+     <span class="igb-go">@cakevelys ${I.arrow}</span>
+   </a>
    <div class="filters" id="shopFilters">
      <button class="filter active" data-f="all" onclick="filterShop('all',this)">Semua</button>
      <button class="filter" data-f="cake" onclick="filterShop('cake',this)">Custom Cake</button>
@@ -682,7 +745,7 @@ function viewAbout(){return `
  </div></section>`;
 }
 function toggleFaq(b){b.closest(".faq-item").classList.toggle("open")}
-function viewReview(){return `<div class="page-head wrap"><span class="kicker">Testimoni</span><h1>Kata <span class="serif-it">pelanggan</span></h1><p>Cerita dan pengalaman dari pelanggan Cakevelys.</p></div><div class="wrap section" id="review-root" style="padding-top:24px"></div>`}
+function viewReview(){return `<div class="page-head wrap"><span class="kicker">Cerita Mereka</span><h1>Setiap ulasan, <span class="serif-it">sebuah momen</span></h1><p>Cerita dari mereka yang memercayakan harinya pada kami.</p></div><div class="wrap section" id="review-root" style="padding-top:24px"></div>`}
 function viewContact(){return `
  <div class="page-head wrap"><span class="kicker">Hubungi Kami</span><h1>Mari <span class="serif-it">terhubung</span></h1><p>Berlokasi di Banyumanik, Semarang. Silakan chat dulu sebelum memesan.</p></div>
  <div class="wrap section" style="padding-top:24px"><div class="contact-grid">
@@ -725,7 +788,7 @@ function filterShop(key,btn){
 let CZ=null;
 function openCustomizer(catKey,itemId){
  const cat=getCategory(catKey),item=getItem(catKey,itemId);if(!cat||!item)return;
- CZ={catKey,itemId,flavour:cat.options?.flavour?cat.options.flavour.choices[0].name:null,flavourAdd:cat.options?.flavour?cat.options.flavour.choices[0].add:0,shape:cat.options?.shape?cat.options.shape.choices[0].name:null,filling:item.fillings?item.fillings[0].name:null,fillingPrice:item.fillings?item.fillings[0].price:null,level:"simple",text:"",addons:{},qty:1};
+ CZ={catKey,itemId,flavour:cat.options?.flavour?cat.options.flavour.choices[0].name:null,flavourAdd:cat.options?.flavour?cat.options.flavour.choices[0].add:0,shape:cat.options?.shape?cat.options.shape.choices[0].name:null,filling:item.fillings?item.fillings[0].name:null,fillingPrice:item.fillings?item.fillings[0].price:null,level:"simple",text:"",addons:{},qty:1,date:""};
  buildModal(cat,item);document.getElementById("cz-overlay").classList.add("open");document.body.style.overflow="hidden";
 }
 function closeCustomizer(){document.getElementById("cz-overlay")?.classList.remove("open");document.body.style.overflow="";CZ=null}
@@ -751,7 +814,7 @@ function buildModal(cat,item){
    <div class="mhead"><h3>${cat.title} · ${item.size}</h3><button class="mclose" onclick="closeCustomizer()">${I.close}</button></div>
    <div class="mbody"><div class="mmedia">${media}</div>${estNote}${fl}${sh}${fi}${tx}${dl}
      <div class="field"><label>Add-ons <span style="font-weight:400;color:var(--muted);font-size:.8rem">(opsional)</span></label><div class="addon-list">${ad}</div></div>
-     <div class="field"><label>Jumlah</label><div class="qty"><button type="button" onclick="onQty(-1)">−</button><input type="number" id="cz-qty" value="1" min="1" onchange="onQtyInput(this.value)"><button type="button" onclick="onQty(1)">+</button></div></div>
+     <div class="field two"><div><label>Tanggal Ambil / Kirim <span class="req">*</span></label><input type="date" id="cz-date" min="${minPickupDate()}" value="${CZ.date||""}" onchange="CZ.date=this.value"></div><div><label>Jumlah</label><div class="qty"><button type="button" onclick="onQty(-1)">−</button><input type="number" id="cz-qty" value="1" min="1" onchange="onQtyInput(this.value)"><button type="button" onclick="onQty(1)">+</button></div></div></div>
      ${noteHTML}
    </div>
    ${footHTML}</div>`;
@@ -787,11 +850,12 @@ function consultNow(){
  window.open(`${CAKEVELYS.waLink}?text=${encodeURIComponent(L.join("\n"))}`,"_blank");
 }
 function addCurrentToCart(){
+ if(!CZ.date){toast("Pilih tanggal ambil/kirim dulu ya",false);const d=document.getElementById("cz-date");if(d){d.style.borderColor="var(--wine)";d.focus()}return}
  const cat=getCategory(CZ.catKey),item=getItem(CZ.catKey,CZ.itemId);
  const lv=DESIGN_LEVELS.find(l=>l.id===CZ.level)||DESIGN_LEVELS[0];
  const addonList=Object.keys(CZ.addons).map(id=>{const a=ADDONS.find(x=>x.id===id),q=CZ.addons[id].qty||1;return {name:a.name+(a.qty?` ×${q}`:""),price:a.price*q}});
  const product=czUnitPrice()*CZ.qty;
- const line={uid:"l"+Date.now()+Math.floor(Math.random()*1000),category:cat.title,catKey:CZ.catKey,productName:`${cat.title} ${item.size}`,size:item.size,img:item.img,flavour:CZ.flavour,shape:CZ.shape,filling:CZ.filling,designLevel:lv.name,designFee:lv.fee,text:(CZ.text||"").trim(),addons:addonList,qty:CZ.qty,unitPrice:czUnitPrice(),productTotal:product,lineTotal:product+lv.fee};
+ const line={uid:"l"+Date.now()+Math.floor(Math.random()*1000),category:cat.title,catKey:CZ.catKey,productName:`${cat.title} ${item.size}`,size:item.size,img:item.img,flavour:CZ.flavour,shape:CZ.shape,filling:CZ.filling,designLevel:lv.name,designFee:lv.fee,text:(CZ.text||"").trim(),addons:addonList,qty:CZ.qty,date:CZ.date,unitPrice:czUnitPrice(),productTotal:product,lineTotal:product+lv.fee};
  const c=getCart();c.push(line);saveCart(c);closeCustomizer();toast("Ditambahkan ke keranjang")}
 
 /* ===== CART + CHECKOUT + QRIS + WHATSAPP ===== */
@@ -801,7 +865,7 @@ function renderCart(){
  if(cart.length===0){root.innerHTML=`<div class="empty"><div class="ei">${I.bag}</div><h3>Keranjang masih kosong</h3><p>Yuk pilih kue favoritmu terlebih dahulu.</p><a href="#shop" class="btn btn-primary btn-lg">Mulai Belanja ${I.arrow}</a></div>`;return}
  const prof=getProfile();
  const items=cart.map(it=>{
-  const d=[];if(it.flavour)d.push(`<b>Rasa:</b> ${it.flavour}`);if(it.shape)d.push(`<b>Bentuk:</b> ${it.shape}`);if(it.filling)d.push(`<b>Topping:</b> ${it.filling}`);if(it.designLevel)d.push(`<b>Desain:</b> ${it.designLevel}${it.designFee?` (+${rupiah(it.designFee)})`:""}`);if(it.addons&&it.addons.length)d.push(`<b>Add-on:</b> ${it.addons.map(a=>a.name).join(", ")}`);if(it.text)d.push(`<b>Request:</b> "${escapeHTML(it.text)}"`);
+  const d=[];if(it.date)d.push(`<b>Tanggal:</b> ${formatDateID(it.date)}`);if(it.flavour)d.push(`<b>Rasa:</b> ${it.flavour}`);if(it.shape)d.push(`<b>Bentuk:</b> ${it.shape}`);if(it.filling)d.push(`<b>Topping:</b> ${it.filling}`);if(it.designLevel)d.push(`<b>Desain:</b> ${it.designLevel}${it.designFee?` (+${rupiah(it.designFee)})`:""}`);if(it.addons&&it.addons.length)d.push(`<b>Add-on:</b> ${it.addons.map(a=>a.name).join(", ")}`);if(it.text)d.push(`<b>Request:</b> "${escapeHTML(it.text)}"`);
   const media=it.img?`<img src="${it.img}" alt="${it.productName}" onerror="this.src='${CAKEVELYS.logo}';this.style.objectFit='contain';this.style.padding='8px';this.style.background='#fff'">`:`<div class="ph">${catIcon(it.catKey)}</div>`;
   return `<div class="citem"><div class="cmedia">${media}</div><div><h4>${it.productName}</h4><div class="meta">${d.join("<br>")}</div>
    <div class="cfoot"><div class="qty"><button type="button" onclick="changeQty('${it.uid}',-1)">−</button><input type="number" value="${it.qty}" min="1" onchange="setQty('${it.uid}',this.value)"><button type="button" onclick="changeQty('${it.uid}',1)">+</button></div>
@@ -809,28 +873,53 @@ function renderCart(){
  }).join("");
  const subProduct=cart.reduce((s,it)=>s+lineProduct(it),0);
  const estFee=cart.reduce((s,it)=>s+(it.designFee||0),0);
- window.__sub=subProduct;window.__estfee=estFee;window.__voucher=null;
+ const dates=[...new Set(cart.map(it=>it.date).filter(Boolean))];
+ const dateLabel=dates.length===1?formatDateID(dates[0]):(dates.length>1?"beberapa tanggal — lihat rincian item":"-");
+ const big=cartHasBig(cart);
+ window.__sub=subProduct;window.__estfee=estFee;window.__voucher=null;window.__bigCake=big;window.__ongkir=0;window.__deliveryBlocked=false;
+ const vehField=big
+   ?`<div><label>Kendaraan</label><input type="text" value="Mobil (wajib)" disabled><input type="hidden" id="deliv-veh" value="mobil"></div>`
+   :`<div><label>Kendaraan</label><select id="deliv-veh" onchange="recalc()"><option value="motor">Motor</option><option value="mobil">Mobil</option></select></div>`;
  root.innerHTML=`<div class="cart-layout"><div><h2 style="margin-bottom:18px;font-size:1.45rem;font-weight:500">Keranjang · ${cartCount()} item</h2>${items}<a href="#shop" class="btn btn-ghost">${I.chevL} Lanjut belanja</a></div>
-  <div><div class="summary"><h3>Konfirmasi Pesanan</h3><p class="sub">Isi data di bawah — semuanya tersusun rapi otomatis di WhatsApp.</p>
-   <div class="consult-note">${I.info}<div>Masih ragu soal design fee? <b>Konsultasi dulu</b> biar harganya pasti sebelum bayar. <a class="cn-link" href="${CAKEVELYS.waLink}?text=${encodeURIComponent("Halo Cakevelys, saya mau konsultasi desain & harga sebelum checkout.")}" target="_blank" rel="noopener">Konsultasi via WhatsApp →</a><a class="cn-link" href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">Lihat inspirasi desain di Instagram →</a></div></div>
+  <div><div class="summary"><h3>Rampungkan Pesanan</h3><p class="sub">Beberapa detail terakhir, lalu momenmu siap kami rangkai.</p>
+   <div class="consult-note">${I.info}<div>Masih menimbang desainnya? <b>Konsultasi dulu</b> agar harga pasti sebelum membayar. <a class="cn-link" href="${CAKEVELYS.waLink}?text=${encodeURIComponent("Halo Cakevelys, saya mau konsultasi desain & harga sebelum checkout.")}" target="_blank" rel="noopener">Konsultasi via WhatsApp →</a><a class="cn-link" href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">Lihat inspirasi desain di Instagram →</a></div></div>
+   <div class="pickup-date">${I.clock}<span>Tanggal pengambilan: <b>${dateLabel}</b></span></div>
    <div class="field"><label>Atas Nama <span class="req">*</span></label><input type="text" id="buyer-name" placeholder="Nama pemesan" value="${escapeAttr(prof.name)}"></div>
    <div class="field"><label>No. WhatsApp <span class="req">*</span></label><input type="tel" id="buyer-phone" placeholder="08xxxxxxxxxx" value="${escapeAttr(prof.phone)}"></div>
-   <div class="field"><label>Tanggal Ambil / Kirim <span class="req">*</span></label><input type="date" id="buyer-date" min="${minPickupDate()}"><div class="hint">Pemesanan maksimal H-1.</div></div>
-   <div class="field"><label>Metode Pengambilan</label><select id="buyer-method"><option value="Self Pick-up">Self Pick-up (ambil sendiri)</option><option value="Pengiriman Ojol (Shopee/Gosend/Grab)">Pengiriman Ojol (Shopee/Gosend/Grab)</option></select></div>
+   <div class="field"><label>Metode Pengambilan</label><select id="buyer-method" onchange="onMethodChange()"><option value="Self Pick-up">Self Pick-up (ambil sendiri)</option><option value="Pengiriman (Delivery)">Pengiriman (Delivery)</option></select>${big?`<div class="hint">Ada kue di atas 16 cm — demi keamanan desain, pengiriman menggunakan <b>mobil</b>.</div>`:""}</div>
+   <div class="field hidden" id="delivery-box">
+     <div class="dbx">
+       <div class="dbx-head">${I.truck}<b>Detail Pengiriman</b><span>Khusus Kota Semarang · maks ${ONGKIR.maxKm} km</span></div>
+       <div class="field"><label>Kecamatan (Kota Semarang)</label><select id="deliv-area" onchange="onAreaChange()"><option value="">— Pilih kecamatan —</option>${AREAS.map(a=>`<option value="${a.km}">${a.n} (±${a.km} km)</option>`).join("")}<option value="luar">Luar Kota Semarang (tidak tersedia)</option></select></div>
+       <div class="field"><label>Alamat Pengiriman</label><textarea id="deliv-addr" placeholder="Alamat lengkap + patokan"></textarea></div>
+       <a class="btn btn-outline btn-block" href="${MAPS_DIR}" target="_blank" rel="noopener" style="margin-bottom:12px">${I.pin} Cek jarak persis via Google Maps</a>
+       <div class="field two"><div><label>Estimasi Jarak (km)</label><input type="number" id="deliv-km" min="0" max="${ONGKIR.maxKm}" step="0.1" placeholder="otomatis dari kecamatan" oninput="recalc()"></div>${vehField}</div>
+       <div class="dbx-msg" id="deliv-msg"></div>
+     </div>
+   </div>
    <div class="field"><label>Design Fee final dari admin <span class="opt">(isi jika sudah konsultasi)</span></label><input type="number" id="buyer-fee" min="0" placeholder="Kosongkan = pakai estimasi otomatis" oninput="recalc()"></div>
    <div class="field"><label>Kode Voucher <span class="opt">(opsional)</span></label><div class="voucher-row"><input type="text" id="voucher-code" placeholder="mis. CAKEVELYS10" oninput="this.value=this.value.toUpperCase()"><button class="btn btn-dark" type="button" onclick="applyVoucher()">Pakai</button></div><div class="hint" id="voucher-msg"></div></div>
    <div class="field"><label>Catatan (opsional)</label><textarea id="buyer-note" placeholder="Jam ambil, request tambahan, dll."></textarea></div>
    <div class="srow"><span>Subtotal kue</span><span>${rupiah(subProduct)}</span></div>
    <div class="srow"><span>Design fee <span class="muted" id="feetag">(estimasi)</span></span><span id="sumfee">${rupiah(estFee)}</span></div>
    <div class="srow hidden" id="voucher-srow"><span>Voucher <span class="muted" id="vouchertag"></span></span><span id="sumvoucher" style="color:var(--wine)">-</span></div>
-   <div class="srow"><span class="muted">Ongkir</span><span class="muted">sesuai metode</span></div>
+   <div class="srow"><span>Ongkir</span><span id="sumongkir">—</span></div>
    <div class="srow total"><span>Total</span><span class="v" id="sumtotal">${rupiah(subProduct+estFee)}</span></div>
-   <p class="muted" style="margin-top:8px">Bila belum konsultasi, design fee & total masih estimasi. Ongkir dikonfirmasi admin via WhatsApp.</p>
-   <button class="btn btn-primary btn-block btn-lg mt-16" onclick="startCheckout()">Checkout · Bayar QRIS ${I.arrow}</button>
+   <p class="muted" style="margin-top:8px">Bila belum konsultasi, design fee & total masih estimasi. Admin akan konfirmasi setelah pembayaran.</p>
+   <div class="co-choice">
+     <button class="btn btn-primary btn-block btn-lg" onclick="startCheckout('app')">${I.check} Checkout di Aplikasi</button>
+     <button class="btn btn-wa btn-block btn-lg" onclick="startCheckout('wa')">${I.wa} Pesan via WhatsApp</button>
+   </div>
+   <p class="muted" style="text-align:center;margin-top:10px;font-size:.78rem">Dua-duanya bayar via QRIS. Bedanya hanya cara konfirmasi — di aplikasi atau langsung lewat WhatsApp.</p>
   </div></div></div>`;
+ onMethodChange();
 }
 function effFee(){const f=Number(document.getElementById("buyer-fee")?.value||0);return f>0?{fee:f,confirmed:true}:{fee:window.__estfee||0,confirmed:false}}
 function discountFor(base){const code=window.__voucher;if(!code)return 0;const v=VOUCHERS[code];if(!v)return 0;if(v.min&&base<v.min)return 0;let d=v.type==="percent"?Math.round(base*v.value/100):v.value;return Math.min(d,base)}
+function currentMethod(){return document.getElementById("buyer-method")?.value||"Self Pick-up"}
+function isDelivery(){return currentMethod().indexOf("Pengiriman")>=0}
+function onMethodChange(){const box=document.getElementById("delivery-box");if(box)box.classList.toggle("hidden",!isDelivery());recalc()}
+function onAreaChange(){const a=document.getElementById("deliv-area")?.value,km=document.getElementById("deliv-km");if(a&&a!=="luar"&&km)km.value=a;recalc()}
 function recalc(){
  const ef=effFee(),sub=window.__sub||0,base=sub+ef.fee,disc=discountFor(base);
  const sf=document.getElementById("sumfee");if(sf)sf.textContent=rupiah(ef.fee);
@@ -838,7 +927,23 @@ function recalc(){
  const vr=document.getElementById("voucher-srow");
  if(window.__voucher&&disc>0){vr.classList.remove("hidden");document.getElementById("vouchertag").textContent=window.__voucher;document.getElementById("sumvoucher").textContent="− "+rupiah(disc)}
  else if(vr){vr.classList.add("hidden")}
- const st=document.getElementById("sumtotal");if(st)st.textContent=rupiah(base-disc);
+ // ongkir
+ let ongkir=0,blocked=false,msg="";
+ const or=document.getElementById("sumongkir"),dm=document.getElementById("deliv-msg");
+ if(isDelivery()){
+   const area=document.getElementById("deliv-area")?.value;
+   if(area==="luar"){blocked=true;msg=`Maaf, pengiriman hanya untuk Kota Semarang. Silakan pilih Self Pick-up untuk area luar kota.`}
+   else{
+     const km=Number(document.getElementById("deliv-km")?.value||0);
+     let veh=window.__bigCake?"mobil":(document.getElementById("deliv-veh")?.value||"motor");
+     if(km<=0){msg="Masukkan estimasi jarak untuk menghitung ongkir."}
+     else{const r=calcOngkir(km,veh);if(r.ok){ongkir=r.cost;msg=`Ongkir ${veh==="mobil"?"mobil":"motor"} untuk ${km} km: <b>${rupiah(r.cost)}</b>`}else{blocked=true;msg=r.msg}}
+   }
+   if(or)or.textContent=ongkir>0?rupiah(ongkir):(blocked?"tidak tersedia":"—");
+   if(dm){dm.innerHTML=msg;dm.className="dbx-msg"+(blocked?" err":ongkir>0?" ok":"")}
+ }else{if(or)or.textContent="— (ambil sendiri)";if(dm)dm.innerHTML=""}
+ window.__ongkir=ongkir;window.__deliveryBlocked=blocked;
+ const st=document.getElementById("sumtotal");if(st)st.textContent=rupiah(base-disc+ongkir);
 }
 function applyVoucher(){
  const code=(document.getElementById("voucher-code").value||"").trim().toUpperCase();
@@ -854,53 +959,71 @@ function changeQty(uid,d){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)ret
 function setQty(uid,v){const c=getCart(),it=c.find(x=>x.uid===uid);if(!it)return;it.qty=Math.max(1,Number(v)||1);it.lineTotal=it.unitPrice*it.qty;saveCart(c);renderCart()}
 function removeItem(uid){saveCart(getCart().filter(x=>x.uid!==uid));renderCart();toast("Item dihapus",false)}
 function val(id){return (document.getElementById(id)?.value||"").trim()}
-function startCheckout(){
- const name=val("buyer-name"),phone=val("buyer-phone"),date=val("buyer-date");
- if(!name||!phone||!date){toast("Lengkapi nama, WA & tanggal dulu ya",false);[["buyer-name",name],["buyer-phone",phone],["buyer-date",date]].forEach(([id,v])=>{const el=document.getElementById(id);if(el&&!v){el.style.borderColor="var(--wine)";el.focus()}});return}
- saveProfile({name,phone});
+function startCheckout(mode){
+ const name=val("buyer-name"),phone=val("buyer-phone");
+ if(!name||!phone){toast("Lengkapi nama & WhatsApp dulu ya",false);[["buyer-name",name],["buyer-phone",phone]].forEach(([id,v])=>{const el=document.getElementById(id);if(el&&!v){el.style.borderColor="var(--wine)";el.focus()}});return}
+ recalc();
  const cart=getCart();
+ let delivery=null;
+ if(isDelivery()){
+   if(window.__deliveryBlocked){toast("Pengiriman tidak tersedia untuk area/jarak ini.",false);document.getElementById("deliv-km")?.focus();return}
+   const addr=val("deliv-addr"),km=Number(val("deliv-km")||0);
+   if(!addr){toast("Isi alamat pengiriman dulu ya",false);document.getElementById("deliv-addr")?.focus();return}
+   if(km<=0){toast("Masukkan estimasi jarak dulu ya",false);document.getElementById("deliv-km")?.focus();return}
+   const veh=window.__bigCake?"Mobil":(document.getElementById("deliv-veh")?.value==="mobil"?"Mobil":"Motor");
+   delivery={area:"Kota Semarang",addr,km,veh,cost:window.__ongkir||0};
+ }
+ saveProfile({name,phone});
  const subtotal=cart.reduce((s,it)=>s+lineProduct(it),0);
  const ef=effFee(),base=subtotal+ef.fee,disc=discountFor(base);
  const voucher=(window.__voucher&&disc>0)?{code:window.__voucher,amount:disc}:null;
- openQris({orderNo:genOrderNo(),name,phone,date,method:val("buyer-method"),note:val("buyer-note"),items:cart,subtotal,fee:ef.fee,feeConfirmed:ef.confirmed,voucher,total:base-disc,createdAt:new Date().toISOString()});
+ const dates=[...new Set(cart.map(it=>it.date).filter(Boolean))];
+ const total=base-disc+(delivery?delivery.cost:0);
+ openQris({orderNo:genOrderNo(),name,phone,dates,method:currentMethod(),delivery,note:val("buyer-note"),items:cart,subtotal,fee:ef.fee,feeConfirmed:ef.confirmed,voucher,total,createdAt:new Date().toISOString()},mode||"wa");
 }
-function openQris(order){
+function openQris(order,mode){
  let ov=document.getElementById("qris-overlay");
  if(!ov){ov=document.createElement("div");ov.id="qris-overlay";ov.className="overlay";ov.addEventListener("click",e=>{if(e.target===ov)closeQris()});document.body.appendChild(ov)}
+ const footBtn=mode==="app"
+   ?`<button class="btn btn-primary btn-block btn-lg" onclick="confirmInApp()">${I.check} Saya Sudah Bayar — Selesaikan</button><p class="muted" style="text-align:center;font-size:.76rem">Pesanan tercatat di aplikasi. Kamu tetap bisa kirim ke WhatsApp setelah ini.</p>`
+   :`<button class="btn btn-wa btn-block btn-lg" onclick="confirmAndWhatsApp()">${I.wa} Konfirmasi & Kirim ke WhatsApp</button><p class="muted" style="text-align:center;font-size:.76rem">Detail pesanan terisi otomatis di WhatsApp dalam bentuk form.</p>`;
  ov.innerHTML=`<div class="modal" role="dialog" aria-modal="true" style="max-width:450px">
    <div class="mhead"><h3>Pembayaran QRIS</h3><button class="mclose" onclick="closeQris()">${I.close}</button></div>
    <div class="mbody qbox">
      <p style="color:var(--muted);font-size:.9rem">No. Pesanan <b style="color:var(--wine)">${order.orderNo}</b></p>
      <div class="qimg"><img src="${CAKEVELYS.qris}" alt="QRIS Cakevelys" onerror="this.parentElement.innerHTML='<div class=&quot;qfall&quot;>Barcode QRIS<br><br>Simpan file <b>${CAKEVELYS.qris}</b> di root repo — otomatis muncul di sini.</div>'"></div>
-     <p style="font-size:.84rem;color:var(--muted)">Total transfer (kue + design fee)</p>
+     <p style="font-size:.84rem;color:var(--muted)">Total transfer${order.delivery?" (kue + design fee + ongkir)":" (kue + design fee)"}</p>
      <div class="qamt">${rupiah(order.total)}</div>
-     <p class="muted" style="font-size:.78rem;margin-top:4px">*Ongkir (jika pakai pengiriman) dikonfirmasi admin terpisah.</p>
+     ${order.delivery?`<p class="muted" style="font-size:.78rem;margin-top:4px">Termasuk ongkir ${rupiah(order.delivery.cost)} (${order.delivery.veh}, ${order.delivery.km} km).</p>`:`<p class="muted" style="font-size:.78rem;margin-top:4px">Design fee final dikonfirmasi admin bila belum konsultasi.</p>`}
      <ul class="steps">
        <li><span class="n">1</span> Scan QRIS menggunakan e-wallet atau m-banking.</li>
        <li><span class="n">2</span> Bayar sesuai nominal, lalu screenshot bukti pembayaran.</li>
-       <li><span class="n">3</span> Klik tombol di bawah untuk kirim form + bukti + referensi desain ke WhatsApp.</li>
+       <li><span class="n">3</span> Lanjutkan dengan tombol di bawah untuk konfirmasi.</li>
      </ul>
    </div>
-   <div class="mfoot"><button class="btn btn-wa btn-block btn-lg" onclick="confirmAndWhatsApp()">${I.wa} Konfirmasi Pembayaran & Kirim Referensi</button>
-   <p class="muted" style="text-align:center;font-size:.76rem">Detail pesanan terisi otomatis di WhatsApp dalam bentuk form.</p></div></div>`;
+   <div class="mfoot">${footBtn}</div></div>`;
  window.__activeOrder=order;ov.classList.add("open");document.body.style.overflow="hidden";
 }
 function closeQris(){document.getElementById("qris-overlay")?.classList.remove("open");document.body.style.overflow=""}
-function confirmAndWhatsApp(){const o=window.__activeOrder;if(!o)return;const url=`${CAKEVELYS.waLink}?text=${encodeURIComponent(buildWaMessage(o))}`;saveOrder(o);saveCart([]);window.open(url,"_blank");closeQris();showThankYou(o)}
+function confirmAndWhatsApp(){const o=window.__activeOrder;if(!o)return;const url=`${CAKEVELYS.waLink}?text=${encodeURIComponent(buildWaMessage(o))}`;saveOrder(o);saveCart([]);window.open(url,"_blank");closeQris();showThankYou(o,false)}
+function confirmInApp(){const o=window.__activeOrder;if(!o)return;saveOrder(o);saveCart([]);closeQris();showThankYou(o,true)}
+function copyOrder(){const o=window.__activeOrder;if(!o)return;const txt=buildWaMessage(o).replace(/\*/g,"");navigator.clipboard?.writeText(txt).then(()=>toast("Ringkasan pesanan disalin")).catch(()=>toast("Gagal menyalin",false))}
 /* Form konfirmasi terstruktur (pakai bold WhatsApp) */
 function buildWaMessage(o){
  const L=[];
  L.push("*KONFIRMASI PESANAN — CAKEVELYS*");
  L.push("———————————————");
+ const dd=(o.dates&&o.dates.length===1)?formatDateID(o.dates[0]):(o.dates&&o.dates.length>1?"(lihat per item)":formatDateID(o.date));
  L.push("No. Pesanan   : "+o.orderNo);
  L.push("Atas Nama     : "+o.name);
  L.push("No. WhatsApp  : "+o.phone);
- L.push("Tanggal       : "+formatDateID(o.date));
+ L.push("Tanggal       : "+dd);
  L.push("Metode        : "+o.method);
  L.push("");
  L.push("*RINCIAN PESANAN*");
  o.items.forEach((it,i)=>{
    L.push((i+1)+". "+it.productName);
+   if(it.date)L.push("    - Tanggal  : "+formatDateID(it.date));
    if(it.flavour)L.push("    - Rasa     : "+it.flavour);
    if(it.shape)L.push("    - Bentuk   : "+it.shape);
    if(it.filling)L.push("    - Topping  : "+it.filling);
@@ -909,12 +1032,18 @@ function buildWaMessage(o){
    if(it.addons&&it.addons.length)L.push("    - Add-on   : "+it.addons.map(a=>a.name).join(", "));
    L.push("    - Harga    : "+it.qty+" x "+rupiah(it.unitPrice)+" = "+rupiah(lineProduct(it)));
  });
+ if(o.delivery){
+   L.push("");
+   L.push("*PENGIRIMAN*");
+   L.push("Alamat    : "+o.delivery.addr);
+   L.push("Jarak     : "+o.delivery.km+" km ("+o.delivery.veh+")");
+ }
  L.push("");
  L.push("*PEMBAYARAN*");
  L.push("Subtotal kue  : "+rupiah(o.subtotal));
  L.push("Design fee    : "+(o.fee>0?rupiah(o.fee)+(o.feeConfirmed?" (sesuai konsultasi)":" (estimasi)"):"Gratis / desain simpel"));
  if(o.voucher)L.push("Voucher       : "+o.voucher.code+" (- "+rupiah(o.voucher.amount)+")");
- L.push("Ongkir        : "+(o.method.indexOf("Pick")>=0?"- (ambil sendiri)":"(sesuai metode)"));
+ L.push("Ongkir        : "+(o.delivery?rupiah(o.delivery.cost):"- (ambil sendiri)"));
  L.push("Total         : "+rupiah(o.total));
  L.push("Metode bayar  : QRIS - sudah transfer");
  L.push("");
@@ -925,11 +1054,28 @@ function buildWaMessage(o){
  L.push("Terima kasih, mohon diproses ya 🤍");
  return L.join("\n");
 }
-function showThankYou(o){
+function showThankYou(o,inApp){
  const root=document.getElementById("cart-root");if(!root)return;
- root.innerHTML=`<div class="empty"><div class="ei">${I.check}</div><h3>Pesanan siap dikonfirmasi</h3>
-  <p>No. Pesanan <b style="color:var(--wine)">${o.orderNo}</b><br>Tab WhatsApp sudah terbuka — tinggal kirim form beserta bukti bayar & foto referensi desain.<br><span style="font-size:.85rem">Butuh inspirasi desain? Intip <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" style="color:var(--wine);font-weight:600">Instagram @cakevelys</a>. Jika tab WhatsApp tidak terbuka otomatis, klik tombol di bawah.</span></p>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn-wa btn-lg" href="${CAKEVELYS.waLink}?text=${encodeURIComponent(buildWaMessage(o))}" target="_blank" rel="noopener">${I.wa} Buka WhatsApp</a><a class="btn btn-outline btn-lg" href="#shop">Pesan Lagi</a></div></div>`;
+ const waUrl=`${CAKEVELYS.waLink}?text=${encodeURIComponent(buildWaMessage(o))}`;
+ const lead=inApp
+   ?`Pesananmu sudah tercatat di aplikasi. Agar kami bisa mulai merangkainya, <b>kirim bukti bayar & foto referensi desain</b> ke WhatsApp ya.`
+   :`Tab WhatsApp sudah terbuka — tinggal kirim form beserta <b>bukti bayar & foto referensi desain</b>.`;
+ root.innerHTML=`<div class="receipt">
+   <div class="ei">${I.check}</div>
+   <h3>Terima kasih, ${escapeHTML(o.name.split(" ")[0]||o.name)} 🤍</h3>
+   <p class="rsub">${lead}</p>
+   <div class="rcard">
+     <div class="rrow"><span>No. Pesanan</span><b>${o.orderNo}</b></div>
+     <div class="rrow"><span>Total</span><b style="color:var(--wine)">${rupiah(o.total)}</b></div>
+     <div class="rrow"><span>Metode</span><b>${o.method}</b></div>
+     ${o.delivery?`<div class="rrow"><span>Ongkir</span><b>${rupiah(o.delivery.cost)} · ${o.delivery.veh}</b></div>`:""}
+   </div>
+   <p class="rins">Butuh inspirasi desain? Intip <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener">Instagram @cakevelys</a>.</p>
+   <div class="ractions">
+     <a class="btn btn-wa btn-lg" href="${waUrl}" target="_blank" rel="noopener">${I.wa} ${inApp?"Kirim ke WhatsApp":"Buka WhatsApp"}</a>
+     <button class="btn btn-outline btn-lg" onclick="copyOrder()">Salin Ringkasan</button>
+     <a class="btn btn-ghost" href="#shop">Pesan Lagi</a>
+   </div></div>`;
  window.scrollTo({top:0,behavior:"smooth"});
 }
 function genOrderNo(){const d=new Date();return `${CAKEVELYS.orderPrefix}-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${Math.floor(1000+Math.random()*9000)}`}
