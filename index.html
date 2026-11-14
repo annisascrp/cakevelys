@@ -369,6 +369,17 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .ig-banner .igb-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.88rem;white-space:nowrap}
 .ig-banner .igb-go svg{width:16px;height:16px}
 @media(max-width:620px){.ig-banner .igb-go{display:none}}
+/* galeri referensi (home) */
+.refgal{display:flex;gap:16px;overflow-x:auto;padding:6px 24px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.refgal::-webkit-scrollbar{display:none}
+.refcard{flex:0 0 auto;width:210px;aspect-ratio:3/4;border-radius:18px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);cursor:pointer;background:var(--blush);transition:.3s var(--e)}
+.refcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.refcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--e)}
+.refcard:hover img{transform:scale(1.07)}
+.refcard .rcap{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 13px;background:linear-gradient(0deg,rgba(40,25,28,.86),rgba(40,25,28,.12) 72%,transparent);color:#fff;font-size:.92rem;font-weight:600;font-family:var(--fd)}
+.refcard .rgo{font-family:var(--fb);font-size:.7rem;opacity:.92;font-weight:500;margin-top:4px;display:flex;align-items:center;gap:5px}
+.refcard .rgo svg{width:13px;height:13px}
+@media(min-width:720px){.refcard{width:244px}}
 /* account */
 .acard{max-width:500px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow-sm)}
 .oitem{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
@@ -444,7 +455,7 @@ const CATALOG=[
   },hasText:true,
   items:[
    {id:"cake-10",size:"10 cm",tag:"Bento",price:58000,start:true,img:"10cm-bentocakecustom.jpeg"},
-   {id:"cake-12",size:"12 cm",tag:"",price:78000,start:true,img:null},
+   {id:"cake-12",size:"12 cm",tag:"",price:78000,start:true,img:"cakecustome-12cm.jpeg"},
    {id:"cake-14",size:"14 cm",tag:"Karakter",price:110000,start:true,img:"14cm-customcakekarakter.jpeg"},
    {id:"cake-16",size:"16 cm",tag:"Favorit",price:150000,start:true,img:"16cm-cakecustomecharacter.jpeg"},
    {id:"cake-18",size:"18 cm",tag:"",price:180000,start:true,img:"18cm-customcakekarakter.jpeg"},
@@ -524,6 +535,14 @@ function calcOngkir(km,veh){
 function sizeCm(it){const m=(it.size||"").match(/(\d+)\s*cm/i);return m?Number(m[1]):0}
 function cartHasBig(cart){return cart.some(it=>(it.catKey==="cake"||it.catKey==="mentai")&&sizeCm(it)>16)}
 const HERO_IMG="16cm-customcakedesignsimple.jpeg";
+/* Galeri referensi di halaman depan (foto "catalog-*") — hanya inspirasi, klik → Shop */
+const REFGAL=[
+ {img:"catalog-crown-cake.jpeg",name:"Crown Vintage Cake",tag:"Custom Cake"},
+ {img:"catalog-lily-princess.jpeg",name:"Lily Princess Cake",tag:"Custom Cake"},
+ {img:"catalog-cake-custom.jpeg",name:"Custom Character Cake",tag:"Custom Cake"},
+ {img:"catalog-giant-cookie-karakter.jpeg",name:"Giant Cookie Karakter",tag:"Custom Cookie"},
+ {img:"catalog-mentai-cake.jpeg",name:"Mentai Custom Karakter",tag:"Mentai Cake"}
+];
 const REVIEWS=[
  {stars:5,cat:"Custom Cake",title:"Cakep, sesuai request",body:"Korean cake-nya rapi dan persis seperti desain yang aku minta. Rasanya lembut, tidak terlalu manis, packaging aman sampai rumah.",name:"Dinda A.",handle:"@dindaa"},
  {stars:5,cat:"Mentai Cake",title:"Toppingnya melimpah",body:"Mentai-nya tidak pelit topping dan rasanya gurih pas. Admin fast respon, order H-1 masih diterima. Cocok untuk yang suka savory.",name:"Raka P.",handle:"@rakaprtm"},
@@ -672,7 +691,20 @@ function viewHome(){return `
    </div>
  </div></section>
 
- <section class="section" style="background:var(--cream-2)"><div class="wrap">
+ <section class="section" style="background:var(--cream-2)">
+   <div class="wrap">
+     <div class="sec-head"><span class="kicker reveal">Galeri Karya</span><h2 class="reveal d1">Ratusan cerita, <span class="serif-it">satu per satu kami rangkai</span></h2><p class="reveal d1">Sekilas karya nyata kami sebagai inspirasi. Suka salah satunya? Wujudkan versimu sendiri.</p></div>
+   </div>
+   <div class="refgal reveal">
+     ${REFGAL.map(g=>`<a class="refcard" onclick="location.hash='shop'"><img src="${g.img}" alt="${g.name}" loading="lazy" ${FB}><div class="rcap">${g.name}<span class="rgo">${g.tag} · Pesan serupa ${I.arrow}</span></div></a>`).join("")}
+   </div>
+   <div class="wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px">
+     <a href="#shop" class="btn btn-primary">Pesan Desainmu ${I.arrow}</a>
+     <a href="${CAKEVELYS.instagram}" target="_blank" rel="noopener" class="btn btn-outline">${I.ig} Lihat lebih banyak di Instagram</a>
+   </div>
+ </section>
+
+ <section class="section"><div class="wrap">
    <div class="story">
      <div class="story-visual reveal"><img src="14cm-customcakekarakter.jpeg" alt="Hasil karya Cakevelys" ${FB}></div>
      <div class="reveal d1"><span class="kicker">Tentang Kami</span>
@@ -688,7 +720,7 @@ function viewHome(){return `
    </div>
  </div></section>
 
- <section class="section"><div class="wrap">
+ <section class="section" style="background:var(--cream-2)"><div class="wrap">
    <div class="sec-head center"><span class="kicker center reveal">Cerita Mereka</span><h2 class="reveal d1">Mereka merayakan. <span class="serif-it">Kami mengabadikan.</span></h2></div>
    <div class="tgrid">${REVIEWS.slice(0,3).map((r,i)=>tCard(r,i)).join("")}</div>
    <div style="text-align:center;margin-top:30px"><a href="#review" class="btn btn-ghost reveal">Lihat semua testimoni ${I.arrow}</a></div>
