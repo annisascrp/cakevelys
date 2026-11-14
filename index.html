@@ -370,8 +370,14 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .ig-banner .igb-go svg{width:16px;height:16px}
 @media(max-width:620px){.ig-banner .igb-go{display:none}}
 /* galeri referensi (home) */
-.refgal{display:flex;gap:24px;overflow-x:auto;padding:10px 24px 26px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.refgal{display:flex;gap:24px;overflow-x:auto;padding:12px max(24px,calc((100% - var(--wrap))/2 + 24px)) 28px;scroll-snap-type:x mandatory;scroll-padding-left:max(24px,calc((100% - var(--wrap))/2 + 24px));-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .refgal::-webkit-scrollbar{display:none}
+.gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
+.gal-nav{display:none;gap:10px;flex:0 0 auto}
+.gal-nav button{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--wine);display:flex;align-items:center;justify-content:center;transition:.2s;box-shadow:var(--shadow-sm)}
+.gal-nav button:hover{background:var(--wine);color:#fff;border-color:var(--wine);transform:translateY(-2px)}
+.gal-nav svg{width:20px;height:20px}
+@media(min-width:720px){.gal-nav{display:flex}}
 .refcard{flex:0 0 auto;width:270px;aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);cursor:pointer;background:var(--blush);transition:.3s var(--e)}
 .refcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .refcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--e)}
@@ -460,9 +466,7 @@ const CATALOG=[
    {id:"cake-16",size:"16 cm",tag:"Favorit",price:150000,start:true,img:"16cm-cakecustomecharacter.jpeg"},
    {id:"cake-18",size:"18 cm",tag:"",price:180000,start:true,img:"18cm-customcakekarakter.jpeg"},
    {id:"cake-20",size:"20 cm",tag:"Estimasi",price:220000,start:true,img:null},
-   {id:"cake-22",size:"22 cm",tag:"Estimasi",price:270000,start:true,img:null},
-   {id:"cake-24",size:"24 cm",tag:"Estimasi",price:320000,start:true,img:null},
-   {id:"cake-tier",size:"Tier / Bentuk Khusus",tag:"Konsultasi",consult:true,img:null}
+   {id:"cake-tier",size:"22 cm ke atas / Tier",tag:"Konsultasi",consult:true,img:null}
   ]},
  {key:"cookie",title:"Custom Cookie",icon:"cookie",
   blurb:"Cookie cake tebal & chewy. Pilih rasa favoritmu, tersedia varian dengan filling.",
@@ -590,6 +594,7 @@ const I={
  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>',
  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
  chevL:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>',
+ chevR:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>',
  up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>',
  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>',
  qr:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="14" x2="14" y2="17"/><line x1="17" y1="14" x2="21" y2="14"/><line x1="21" y1="17" x2="21" y2="21"/><line x1="14" y1="21" x2="17" y2="21"/></svg>',
@@ -660,6 +665,7 @@ let _tt;function toast(m,chk=true){let t=document.getElementById("toast");if(!t)
 function initReveal(){const els=document.querySelectorAll(".reveal:not(.in)");if(!("IntersectionObserver" in window)){els.forEach(e=>e.classList.add("in"));return}const io=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ob.unobserve(e.target)}})},{threshold:.1,rootMargin:"0px 0px -40px 0px"});els.forEach(e=>io.observe(e))}
 function syncHeader(){const h=document.getElementById("siteHeader");if(h)h.classList.toggle("scrolled",window.scrollY>12);const t=document.getElementById("toTop");if(t)t.classList.toggle("show",window.scrollY>600)}
 window.addEventListener("scroll",syncHeader,{passive:true});
+function scrollGal(dir){const g=document.getElementById("refgal");if(!g)return;const c=g.querySelector(".refcard");const step=c?c.offsetWidth+24:340;g.scrollBy({left:dir*step,behavior:"smooth"})}
 function openLightbox(s){document.getElementById("lbImg").src=s;document.getElementById("lightbox").classList.add("open")}
 function closeLightbox(){document.getElementById("lightbox").classList.remove("open")}
 document.querySelector("#lightbox .lbx").innerHTML=I.close;
@@ -693,9 +699,12 @@ function viewHome(){return `
 
  <section class="section" style="background:var(--cream-2)">
    <div class="wrap">
-     <div class="sec-head"><span class="kicker reveal">Galeri Karya</span><h2 class="reveal d1">Ratusan cerita, <span class="serif-it">satu per satu kami rangkai</span></h2><p class="reveal d1">Sekilas karya nyata kami sebagai inspirasi. Suka salah satunya? Wujudkan versimu sendiri.</p></div>
+     <div class="gal-head">
+       <div class="sec-head" style="margin-bottom:0"><span class="kicker reveal">Galeri Karya</span><h2 class="reveal d1">Ratusan cerita, <span class="serif-it">satu per satu kami rangkai</span></h2><p class="reveal d1">Sekilas karya nyata kami sebagai inspirasi. Suka salah satunya? Wujudkan versimu sendiri.</p></div>
+       <div class="gal-nav reveal"><button type="button" onclick="scrollGal(-1)" aria-label="Sebelumnya">${I.chevL}</button><button type="button" onclick="scrollGal(1)" aria-label="Berikutnya">${I.chevR}</button></div>
+     </div>
    </div>
-   <div class="refgal reveal">
+   <div class="refgal reveal" id="refgal">
      ${REFGAL.map(g=>`<a class="refcard" onclick="location.hash='shop'"><img src="${g.img}" alt="${g.name}" loading="lazy" ${FB}><div class="rcap">${g.name}<span class="rgo">${g.tag} · Pesan serupa ${I.arrow}</span></div></a>`).join("")}
    </div>
    <div class="wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px">
