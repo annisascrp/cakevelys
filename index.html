@@ -30,8 +30,8 @@
   --e:cubic-bezier(.22,.7,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}*{margin:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
-body{font-family:var(--fb);color:var(--body);background:var(--cream);line-height:1.68;overflow-x:hidden;max-width:100%;width:100%;-webkit-font-smoothing:antialiased;opacity:0;transition:opacity .5s ease}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{font-family:var(--fb);color:var(--body);background:var(--cream);line-height:1.68;overflow-x:clip;max-width:100%;width:100%;-webkit-font-smoothing:antialiased;opacity:0;transition:opacity .5s ease}
 body.ready{opacity:1}
 img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
@@ -70,6 +70,7 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
 /* header */
+#app-header{display:contents}
 .site-header{position:sticky;top:0;z-index:100;background:rgba(251,247,242,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s var(--e)}
 .site-header.scrolled{background:rgba(251,247,242,.96);border-bottom-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:82px;transition:height .3s var(--e)}
@@ -372,12 +373,13 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 /* galeri referensi (home) */
 .refgal{display:flex;gap:24px;overflow-x:auto;padding:12px max(24px,calc((100% - var(--wrap))/2 + 24px)) 28px;scroll-snap-type:x mandatory;scroll-padding-left:max(24px,calc((100% - var(--wrap))/2 + 24px));-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .refgal::-webkit-scrollbar{display:none}
-.gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
-.gal-nav{display:none;gap:10px;flex:0 0 auto}
-.gal-nav button{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--wine);display:flex;align-items:center;justify-content:center;transition:.2s;box-shadow:var(--shadow-sm)}
-.gal-nav button:hover{background:var(--wine);color:#fff;border-color:var(--wine);transform:translateY(-2px)}
-.gal-nav svg{width:20px;height:20px}
-@media(min-width:720px){.gal-nav{display:flex}}
+.gal-wrap{position:relative}
+.gal-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border:1px solid var(--line);color:var(--wine);display:none;align-items:center;justify-content:center;box-shadow:var(--shadow);transition:.2s var(--e)}
+.gal-arrow:hover{background:var(--wine);color:#fff;border-color:var(--wine);transform:translateY(-50%) scale(1.06)}
+.gal-arrow svg{width:22px;height:22px}
+.gal-prev{left:max(10px,calc((100% - var(--wrap))/2 - 26px))}
+.gal-next{right:max(10px,calc((100% - var(--wrap))/2 - 26px))}
+@media(min-width:720px){.gal-arrow{display:flex}}
 .refcard{flex:0 0 auto;width:270px;aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);cursor:pointer;background:var(--blush);transition:.3s var(--e)}
 .refcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .refcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--e)}
@@ -428,9 +430,7 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 <div id="app-header"></div>
 <main id="view"></main>
 <div id="app-footer"></div>
-<div id="app-fab"></div>
-<button class="to-top" id="toTop" aria-label="Ke atas" onclick="window.scrollTo({top:0,behavior:'smooth'})"></button>
-<div class="backdrop" id="backdrop" onclick="closeMobile()"></div>
+<div id="app-fab"></div><div class="backdrop" id="backdrop" onclick="closeMobile()"></div>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lbx" aria-label="Tutup"></button><img src="" alt="" id="lbImg"></div>
 
 <script>
@@ -465,8 +465,7 @@ const CATALOG=[
    {id:"cake-14",size:"14 cm",tag:"Karakter",price:110000,start:true,img:"14cm-customcakekarakter.jpeg"},
    {id:"cake-16",size:"16 cm",tag:"Favorit",price:150000,start:true,img:"16cm-cakecustomecharacter.jpeg"},
    {id:"cake-18",size:"18 cm",tag:"",price:180000,start:true,img:"18cm-customcakekarakter.jpeg"},
-   {id:"cake-20",size:"20 cm",tag:"Estimasi",price:220000,start:true,img:null},
-   {id:"cake-tier",size:"22 cm ke atas / Tier",tag:"Konsultasi",consult:true,img:null}
+   {id:"cake-tier",size:"20 cm ke atas / Tier",tag:"Konsultasi",consult:true,img:null}
   ]},
  {key:"cookie",title:"Custom Cookie",icon:"cookie",
   blurb:"Cookie cake tebal & chewy. Pilih rasa favoritmu, tersedia varian dengan filling.",
@@ -699,13 +698,14 @@ function viewHome(){return `
 
  <section class="section" style="background:var(--cream-2)">
    <div class="wrap">
-     <div class="gal-head">
-       <div class="sec-head" style="margin-bottom:0"><span class="kicker reveal">Galeri Karya</span><h2 class="reveal d1">Ratusan cerita, <span class="serif-it">satu per satu kami rangkai</span></h2><p class="reveal d1">Sekilas karya nyata kami sebagai inspirasi. Suka salah satunya? Wujudkan versimu sendiri.</p></div>
-       <div class="gal-nav reveal"><button type="button" onclick="scrollGal(-1)" aria-label="Sebelumnya">${I.chevL}</button><button type="button" onclick="scrollGal(1)" aria-label="Berikutnya">${I.chevR}</button></div>
-     </div>
+     <div class="sec-head"><span class="kicker reveal">Galeri Karya</span><h2 class="reveal d1">Ratusan cerita, <span class="serif-it">satu per satu kami rangkai</span></h2><p class="reveal d1">Sekilas karya nyata kami sebagai inspirasi. Suka salah satunya? Wujudkan versimu sendiri.</p></div>
    </div>
-   <div class="refgal reveal" id="refgal">
-     ${REFGAL.map(g=>`<a class="refcard" onclick="location.hash='shop'"><img src="${g.img}" alt="${g.name}" loading="lazy" ${FB}><div class="rcap">${g.name}<span class="rgo">${g.tag} · Pesan serupa ${I.arrow}</span></div></a>`).join("")}
+   <div class="gal-wrap">
+     <div class="refgal reveal" id="refgal">
+       ${REFGAL.map(g=>`<a class="refcard" onclick="location.hash='shop'"><img src="${g.img}" alt="${g.name}" loading="lazy" ${FB}><div class="rcap">${g.name}<span class="rgo">${g.tag} · Pesan serupa ${I.arrow}</span></div></a>`).join("")}
+     </div>
+     <button class="gal-arrow gal-prev" type="button" onclick="scrollGal(-1)" aria-label="Sebelumnya">${I.chevL}</button>
+     <button class="gal-arrow gal-next" type="button" onclick="scrollGal(1)" aria-label="Berikutnya">${I.chevR}</button>
    </div>
    <div class="wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px">
      <a href="#shop" class="btn btn-primary">Pesan Desainmu ${I.arrow}</a>
