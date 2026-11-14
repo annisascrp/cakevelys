@@ -370,16 +370,16 @@ h1,h2,h3,h4{font-family:var(--fd);font-weight:500;line-height:1.16;color:var(--i
 .ig-banner .igb-go svg{width:16px;height:16px}
 @media(max-width:620px){.ig-banner .igb-go{display:none}}
 /* galeri referensi (home) */
-.refgal{display:flex;gap:16px;overflow-x:auto;padding:6px 24px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.refgal{display:flex;gap:24px;overflow-x:auto;padding:10px 24px 26px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .refgal::-webkit-scrollbar{display:none}
-.refcard{flex:0 0 auto;width:210px;aspect-ratio:3/4;border-radius:18px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);cursor:pointer;background:var(--blush);transition:.3s var(--e)}
-.refcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.refcard{flex:0 0 auto;width:270px;aspect-ratio:4/5;border-radius:22px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);cursor:pointer;background:var(--blush);transition:.3s var(--e)}
+.refcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .refcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--e)}
-.refcard:hover img{transform:scale(1.07)}
-.refcard .rcap{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 13px;background:linear-gradient(0deg,rgba(40,25,28,.86),rgba(40,25,28,.12) 72%,transparent);color:#fff;font-size:.92rem;font-weight:600;font-family:var(--fd)}
-.refcard .rgo{font-family:var(--fb);font-size:.7rem;opacity:.92;font-weight:500;margin-top:4px;display:flex;align-items:center;gap:5px}
-.refcard .rgo svg{width:13px;height:13px}
-@media(min-width:720px){.refcard{width:244px}}
+.refcard:hover img{transform:scale(1.06)}
+.refcard .rcap{position:absolute;left:0;right:0;bottom:0;padding:20px 18px 17px;background:linear-gradient(0deg,rgba(40,25,28,.88),rgba(40,25,28,.12) 72%,transparent);color:#fff;font-size:1.08rem;font-weight:600;font-family:var(--fd)}
+.refcard .rgo{font-family:var(--fb);font-size:.76rem;opacity:.92;font-weight:500;margin-top:5px;display:flex;align-items:center;gap:6px}
+.refcard .rgo svg{width:14px;height:14px}
+@media(min-width:720px){.refcard{width:320px;border-radius:24px}}
 /* account */
 .acard{max-width:500px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow-sm)}
 .oitem{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
